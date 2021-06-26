@@ -144,7 +144,7 @@
 <li><p>要有大小寫字母</p>
 </li>
 <li><p>1個數字</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]&#123;8,&#125;$</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]&#123;<span class="hljs-number">8</span>,&#125;$/<br></code></pre></td></tr></table></figure>
 <p><img src="https://t0239184.github.io/images/password-regex-pattern1.svg" alt="password-regex-pattern1"></p>
 </li>
 <li><p>8個字元</p>
@@ -154,15 +154,15 @@
 <li><p>1個數字</p>
 </li>
 <li><p>包含特殊符號</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]&#123;8,&#125;$</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]&#123;<span class="hljs-number">8</span>,&#125;$/<br></code></pre></td></tr></table></figure>
 <p><img src="https://t0239184.github.io/images/password-regex-pattern2.svg" alt="password-regex-pattern2"></p>
 </li>
 </ul>
-<h2 id="Email檢核"><a href="#Email檢核" class="headerlink" title="Email檢核"></a>Email檢核</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Email檢核"><a href="#Email檢核" class="headerlink" title="Email檢核"></a>Email檢核</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">/^\w+([-+.<span class="hljs-string">&#x27;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/</span><br></code></pre></td></tr></table></figure>
 <p><img src="https://t0239184.github.io/images/email-regex.svg" alt="email-regex"></p>
-<h2 id="台灣手機號碼��"><a href="#台灣手機號碼��" class="headerlink" title="台灣手機號碼��"></a>台灣手機號碼��</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^09\d&#123;8&#125;$</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="台灣手機號碼��"><a href="#台灣手機號碼��" class="headerlink" title="台灣手機號碼��"></a>台灣手機號碼��</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">/^<span class="hljs-number">09</span>\d&#123;<span class="hljs-number">8</span>&#125;$/<br></code></pre></td></tr></table></figure>
 
-<h2 id="台灣身分證字號��"><a href="#台灣身分證字號��" class="headerlink" title="台灣身分證字號��"></a>台灣身分證字號��</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^[A-Z]&#123;1&#125;[1-2]&#123;1&#125;[0-9]&#123;8&#125;$</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="台灣身分證字號��"><a href="#台灣身分證字號��" class="headerlink" title="台灣身分證字號��"></a>台灣身分證字號��</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">/^[A-Z]&#123;<span class="hljs-number">1</span>&#125;[<span class="hljs-number">1</span>-<span class="hljs-number">2</span>]&#123;<span class="hljs-number">1</span>&#125;[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]&#123;<span class="hljs-number">8</span>&#125;$/<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>rubular - regex測試網站<br><a target="_blank" rel="noopener" href="https://rubular.com/">https://rubular.com/</a></p>

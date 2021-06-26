@@ -140,9 +140,9 @@
 <!-- Content -->
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有段時間沒用Hexo, 忘記如何啟動, 如何Deploy<br>而當時的對於前端技術也不太熟悉, 有很多東西都是照著步驟做的<br>但現在對於前端熟悉了, 重新看了Hexo的官網, 才漸漸回憶起來<br>所以先寫起來, 以後可以參照</p>
 <h2 id="安裝相關依賴"><a href="#安裝相關依賴" class="headerlink" title="安裝相關依賴"></a>安裝相關依賴</h2><p>將blog從git上Clone下來後先將相關依賴裝回來</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install<br></code></pre></td></tr></table></figure>
 
-<h2 id="下載hexo-cli"><a href="#下載hexo-cli" class="headerlink" title="下載hexo-cli"></a>下載hexo-cli</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hex-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="下載hexo-cli"><a href="#下載hexo-cli" class="headerlink" title="下載hexo-cli"></a>下載hexo-cli</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hex-cli<br></code></pre></td></tr></table></figure>
 
 <h2 id="Hexo的基本操作"><a href="#Hexo的基本操作" class="headerlink" title="Hexo的基本操作"></a>Hexo的基本操作</h2><p>然後可以用以下幾個指令進行操作</p>
 <ul>
@@ -158,14 +158,7 @@
 <li><code>npm run deploy</code></li>
 </ul>
 <h2 id="更新和新增文章"><a href="#更新和新增文章" class="headerlink" title="更新和新增文章"></a>更新和新增文章</h2><p>於<code>/source/_posts/</code>中增加新的markdown文件<br>記得於文件中加上Header, 這樣才會有文件相關資訊</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token font-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Hexo使用教學
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2021-06-26 20:19:10</span>
-<span class="token key atrule">categories</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> FrontEnd
-<span class="token key atrule">tags</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> Hexo</span>
-<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: Hexo使用教學<br>date: 2021-06-26 20:19:10<br>categories:<br><span class="hljs-bullet">-</span> FrontEnd<br>tags:<br><span class="hljs-section">- Hexo</span><br><span class="hljs-section">---</span><br></code></pre></td></tr></table></figure>
 
 
 

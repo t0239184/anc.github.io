@@ -139,20 +139,7 @@
 
 <!-- Content -->
 <p>Mac下的PackageManager的Service管理</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew services list  <span class="token comment"># 查看使用brew安装的服務</span>
-brew services run formula <span class="token operator">|</span> --all  <span class="token comment"># 啟動服務，不註冊</span>
-brew services start formula <span class="token operator">|</span> --all  <span class="token comment"># 啟動服務，註冊</span>
-brew services stop formula <span class="token operator">|</span> --all   <span class="token comment"># 停止服務，取消註冊</span>
-brew services restart formula <span class="token operator">|</span> --all  <span class="token comment"># 重啟服務，註冊</span>
-brew services cleanup  <span class="token comment"># 清除無用的服務與配置</span>
-
---all <span class="token comment"># run subcommand on all services.</span>
-
-If <span class="token punctuation">(</span>sudo is passed<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    operate on /Library/LaunchDaemons <span class="token punctuation">(</span>started at boot<span class="token punctuation">)</span>.
-<span class="token punctuation">&#125;</span>else<span class="token punctuation">&#123;</span>
-    Otherwise, operate on ~/Library/LaunchAgents <span class="token punctuation">(</span>started at login<span class="token punctuation">)</span>.
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew services list  <span class="hljs-comment"># 查看使用brew安装的服務</span><br>brew services run formula | --all  <span class="hljs-comment"># 啟動服務，不註冊</span><br>brew services start formula | --all  <span class="hljs-comment"># 啟動服務，註冊</span><br>brew services stop formula | --all   <span class="hljs-comment"># 停止服務，取消註冊</span><br>brew services restart formula | --all  <span class="hljs-comment"># 重啟服務，註冊</span><br>brew services cleanup  <span class="hljs-comment"># 清除無用的服務與配置</span><br><br>--all <span class="hljs-comment"># run subcommand on all services.</span><br><br>If (sudo is passed)&#123;<br>    operate on /Library/LaunchDaemons (started at boot).<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    Otherwise, operate on ~/Library/LaunchAgents (started at login).<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <!-- Tags -->
 

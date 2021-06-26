@@ -156,18 +156,7 @@
 <h3 id="開啟跨來源-HTTP-請求"><a href="#開啟跨來源-HTTP-請求" class="headerlink" title="開啟跨來源 HTTP 請求"></a>開啟跨來源 HTTP 請求</h3><p>Server 必須在 Response 的 Header 裡面加上<code>Access-Control-Allow-Origin</code></p>
 <h3 id="Response流程"><a href="#Response流程" class="headerlink" title="Response流程"></a>Response流程</h3><p><code>Response</code> -&gt; <code>Browser</code> -&gt;  <code> Check &quot;Access-Control-Allow-Origin&quot;</code></p>
 <p>如果裡面有包含現在這個發起 Request 的 Origin 的話，Browser就會允許通過，讓程式順利接收到 Response</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Response Header:</span>
-Content-Type: application/json
-Content-Length: <span class="token number">71</span>
-Connection: keep-alive
-Server: nginx
-Access-Control-Allow-Origin: *
-Cache-Control: no-cache, no-store, must-revalidate, private
-Expires: <span class="token number">0</span>
-Pragma: no-cache
-Twitch-Trace-Id: e316ddcf2fa38a659fa95af9012c9358
-X-Ctxlog-Logid: <span class="token number">1</span>-5920052c-446a91950e3abed21a360bd5
-Timing-Allow-Origin: https://www.twitch.tv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Response Header:</span><br>Content-Type: application/json<br>Content-Length: 71<br>Connection: keep-alive<br>Server: nginx<br>Access-Control-Allow-Origin: *<br>Cache-Control: no-cache, no-store, must-revalidate, private<br>Expires: 0<br>Pragma: no-cache<br>Twitch-Trace-Id: e316ddcf2fa38a659fa95af9012c9358<br>X-Ctxlog-Logid: 1-5920052c-446a91950e3abed21a360bd5<br>Timing-Allow-Origin: https://www.twitch.tv<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>參考來源<br><a target="_blank" rel="noopener" href="http://huli.logdown.com/posts/2223581-ajax-and-cors">http://huli.logdown.com/posts/2223581-ajax-and-cors</a></p>

@@ -139,10 +139,7 @@
 
 <!-- Content -->
 <p>Volume 可以滿足需要互相交流檔案的需求或者留存資料用途，例如資料共享和資料庫檔案等</p>
-<pre class="line-numbers language-none"><code class="language-none">如下表，可以有兩種情境
-
-1. Host file         &lt;-- Volume --&gt;  Container file
-2. Container-A file  &lt;-- Volume --&gt;  Container-B file <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">如下表，可以有兩種情境<br><br>1. Host file         &lt;-- Volume --&gt;  Container file<br>2. Container-A file  &lt;-- Volume --&gt;  Container-B file <br></code></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
@@ -170,13 +167,10 @@
 <blockquote>
 <p>建議增加Volume，Container必須移除重新生成會比較好</p>
 </blockquote>
-<h3 id="1-bind-mount"><a href="#1-bind-mount" class="headerlink" title="1.bind mount"></a>1.bind mount</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># -v(--volume) [host-path]:[container-path] 
+<h3 id="1-bind-mount"><a href="#1-bind-mount" class="headerlink" title="1.bind mount"></a>1.bind mount</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># -v(--volume) [host-path]:[container-path] </span><br><br>$ docker run -d -p 8080:8080 --name tomcat1 -v ~/docker-data/tomcat/conf:/tomcat/conf tomcat:8<br></code></pre></td></tr></table></figure>
 
-$ docker run -d -p 8080:8080 --name tomcat1 -v ~&#x2F;docker-data&#x2F;tomcat&#x2F;conf:&#x2F;tomcat&#x2F;conf tomcat:8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2-volume-Instance"><a href="#2-volume-Instance" class="headerlink" title="2.volume Instance"></a>2.volume Instance</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker volume create myWar
-$ docker run -d -p 8080:8080 --name tomcat1 -v myWar:&#x2F;tomcat&#x2F;webapps tomcat:8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="3-tmpfs-mount"><a href="#3-tmpfs-mount" class="headerlink" title="3. tmpfs mount"></a>3. tmpfs mount</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">(empty)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-volume-Instance"><a href="#2-volume-Instance" class="headerlink" title="2.volume Instance"></a>2.volume Instance</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ docker volume create myWar<br>$ docker run -d -p 8080:8080 --name tomcat1 -v myWar:/tomcat/webapps tomcat:8<br></code></pre></td></tr></table></figure>
+<h3 id="3-tmpfs-mount"><a href="#3-tmpfs-mount" class="headerlink" title="3. tmpfs mount"></a>3. tmpfs mount</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">(empty)<br></code></pre></td></tr></table></figure>
 
 
 <!-- Tags -->

@@ -142,60 +142,9 @@
 <span id="more"></span>
 
 
-<h2 id="Js-code"><a href="#Js-code" class="headerlink" title="Js code"></a>Js code</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
- * ajax.js
- * /
-    
-function ajax(myJson)&#123;
-    
-	var xhr = null;
-	window.XMLHttpRequest ? (xhr = new XMLHttpRequest()) : (xhr = new ActiveXObject("Microsoft.XMLHTTP"));
-	var method = myJson.method || "get";    //method is null then return GET
-	var url = myJson.url;
-	var asyn = myJson.asyn || true;    // boolean 預設非同步加載
-	var data = myJson.data;
-	var fn = myJson.fn;
-	
-	
-	// GET
-	if(method == "get" &amp;&amp; data)&#123;
-		xhr.open(method, url + "?" + data + "&amp;" + Math.random(), asyn);
-	&#125;
-	
-	
-	// POST
-	if(method == "post" &amp;&amp; data)&#123;
-		xhr.open(method, url, asyn);
-		xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-		xhr.send(data);
-	&#125;else&#123;
-		xhr.send();
-	&#125;
-	
-	// Success
-	xhr.onreadystatechange = function()&#123;
-		if(xhr.readyState == 4)&#123;
-			if(xhr.status >= 200 &amp;&amp; xhr.status &lt; 300)&#123;
-				fn(xhr.responseText);
-			&#125;else&#123;
-				alert("Process Error！");
-			&#125;
-		&#125;
-	&#125;
-&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Js-code"><a href="#Js-code" class="headerlink" title="Js code"></a>Js code</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * ajax.js</span><br><span class="hljs-comment"> * /</span><br><span class="hljs-comment">    </span><br><span class="hljs-comment">function ajax(myJson)&#123;</span><br><span class="hljs-comment">    </span><br><span class="hljs-comment">	var xhr = null;</span><br><span class="hljs-comment">	window.XMLHttpRequest ? (xhr = new XMLHttpRequest()) : (xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;));</span><br><span class="hljs-comment">	var method = myJson.method || &quot;get&quot;;    //method is null then return GET</span><br><span class="hljs-comment">	var url = myJson.url;</span><br><span class="hljs-comment">	var asyn = myJson.asyn || true;    // boolean 預設非同步加載</span><br><span class="hljs-comment">	var data = myJson.data;</span><br><span class="hljs-comment">	var fn = myJson.fn;</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">	// GET</span><br><span class="hljs-comment">	if(method == &quot;get&quot; &amp;&amp; data)&#123;</span><br><span class="hljs-comment">		xhr.open(method, url + &quot;?&quot; + data + &quot;&amp;&quot; + Math.random(), asyn);</span><br><span class="hljs-comment">	&#125;</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">	// POST</span><br><span class="hljs-comment">	if(method == &quot;post&quot; &amp;&amp; data)&#123;</span><br><span class="hljs-comment">		xhr.open(method, url, asyn);</span><br><span class="hljs-comment">		xhr.setRequestHeader(&quot;content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);</span><br><span class="hljs-comment">		xhr.send(data);</span><br><span class="hljs-comment">	&#125;else&#123;</span><br><span class="hljs-comment">		xhr.send();</span><br><span class="hljs-comment">	&#125;</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">	// Success</span><br><span class="hljs-comment">	xhr.onreadystatechange = function()&#123;</span><br><span class="hljs-comment">		if(xhr.readyState == 4)&#123;</span><br><span class="hljs-comment">			if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300)&#123;</span><br><span class="hljs-comment">				fn(xhr.responseText);</span><br><span class="hljs-comment">			&#125;else&#123;</span><br><span class="hljs-comment">				alert(&quot;Process Error！&quot;);</span><br><span class="hljs-comment">			&#125;</span><br><span class="hljs-comment">		&#125;</span><br><span class="hljs-comment">	&#125;</span><br><span class="hljs-comment">&#125;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="實際使用"><a href="#實際使用" class="headerlink" title="實際使用"></a>實際使用</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ajax.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-	<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-		method <span class="token operator">:</span> <span class="token string">"get"</span><span class="token punctuation">,</span>
-		url <span class="token operator">:</span> <span class="token string">"get.php"</span><span class="token punctuation">,</span>
-		asyn <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-		data <span class="token operator">:</span> <span class="token string">"user=zym&amp;password=1234"</span><span class="token punctuation">,</span>
-		<span class="token function-variable function">fn</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">res</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> res <span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="實際使用"><a href="#實際使用" class="headerlink" title="實際使用"></a>實際使用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;ajax.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span><br><span class="javascript">	ajax(&#123;</span><br><span class="javascript">		<span class="hljs-attr">method</span> : <span class="hljs-string">&quot;get&quot;</span>,</span><br><span class="javascript">		<span class="hljs-attr">url</span> : <span class="hljs-string">&quot;get.php&quot;</span>,</span><br><span class="javascript">		<span class="hljs-attr">asyn</span> : <span class="hljs-literal">true</span>,</span><br><span class="javascript">		<span class="hljs-attr">data</span> : <span class="hljs-string">&quot;user=zym&amp;password=1234&quot;</span>,</span><br><span class="javascript">		<span class="hljs-attr">fn</span> : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> res </span>)</span>&#123;</span><br><span class="javascript">			<span class="hljs-built_in">console</span>.log( res );</span><br><span class="javascript">		&#125;</span><br><span class="javascript">	&#125;);</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 <h2 id="ActiveXObject"><a href="#ActiveXObject" class="headerlink" title="ActiveXObject?"></a>ActiveXObject?</h2><p>…待補充</p>

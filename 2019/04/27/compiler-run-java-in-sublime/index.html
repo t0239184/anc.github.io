@@ -140,12 +140,7 @@
 <!-- Content -->
 <p>有的時候不想開IDE的情況下測一些很小的東西，這個時候Sublime這種輕巧的編輯器就派上用場了，但這時候想要使用它的腳本工具一口氣編譯執行，但他內建只有編譯，沒有執行，所以就自己寫一個小腳本來執行。</p>
 <p><code>Tools</code> &gt; <code>Build System</code> &gt; <code>New Build System...</code></p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">/* runJava.sublime-build */</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token property">"shell_cmd"</span><span class="token operator">:</span> <span class="token string">"javac \"$file_name\" &amp; java \"$file_base_name\""</span><span class="token punctuation">,</span>
-    <span class="token property">"file_regex"</span><span class="token operator">:</span> <span class="token string">"^(...*?):([0-9]*):?([0-9]*)"</span><span class="token punctuation">,</span>
-    <span class="token property">"selector"</span><span class="token operator">:</span> <span class="token string">"source.java"</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">/* runJava.sublime-build */</span><br>&#123;<br>    <span class="hljs-attr">&quot;shell_cmd&quot;</span>: <span class="hljs-string">&quot;javac \&quot;$file_name\&quot; &amp; java \&quot;$file_base_name\&quot;&quot;</span>,<br>    <span class="hljs-attr">&quot;file_regex&quot;</span>: <span class="hljs-string">&quot;^(...*?):([0-9]*):?([0-9]*)&quot;</span>,<br>    <span class="hljs-attr">&quot;selector&quot;</span>: <span class="hljs-string">&quot;source.java&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在編譯執行前先選擇編譯工具，這個時候選剛才新建的小工具，<code>Build System</code> &gt; <code>runJava</code>，接著<code>Ctrl+B</code>執行，Console中就有我們要的結果了。</p>
 

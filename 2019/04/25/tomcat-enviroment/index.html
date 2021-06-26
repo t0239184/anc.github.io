@@ -138,30 +138,19 @@
 
 
 <!-- Content -->
-<h2 id="Install-Tomcat"><a href="#Install-Tomcat" class="headerlink" title="Install Tomcat"></a>Install Tomcat</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew install tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Install-Tomcat"><a href="#Install-Tomcat" class="headerlink" title="Install Tomcat"></a>Install Tomcat</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ brew install tomcat<br></code></pre></td></tr></table></figure>
 
-<h2 id="Set-Enviroment-Variable"><a href="#Set-Enviroment-Variable" class="headerlink" title="Set Enviroment Variable"></a>Set Enviroment Variable</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim ~&#x2F;.zshrc
+<h2 id="Set-Enviroment-Variable"><a href="#Set-Enviroment-Variable" class="headerlink" title="Set Enviroment Variable"></a>Set Enviroment Variable</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ vim ~/.zshrc<br><br><span class="hljs-comment"># ~/.zshrc</span><br><span class="hljs-built_in">export</span> CATALINA_HOME=/usr/<span class="hljs-built_in">local</span>/Cellar/tomcat/9.0.17/libexec<br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$CATALINA_HOME</span>/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-built_in">export</span> CLASSPATH=.:<span class="hljs-variable">$JAVA_HOME</span>/jre/lib:<span class="hljs-variable">$JAVA_HOME</span>/lib:<span class="hljs-variable">$JAVA_HOME</span>/lib/tools.jar<br></code></pre></td></tr></table></figure>
 
-# ~&#x2F;.zshrc
-export CATALINA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;tomcat&#x2F;9.0.17&#x2F;libexec
-export PATH&#x3D;$CATALINA_HOME&#x2F;bin:$PATH
-export CLASSPATH&#x3D;.:$JAVA_HOME&#x2F;jre&#x2F;lib:$JAVA_HOME&#x2F;lib:$JAVA_HOME&#x2F;lib&#x2F;tools.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Set-Tomcat-User"><a href="#Set-Tomcat-User" class="headerlink" title="Set Tomcat User"></a>Set Tomcat User</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$CATALINA_HOME</span>/conf &amp;&amp; vim tomcat-users.xml<br><br><span class="hljs-comment"># tomcat-users.xml</span><br>&lt;user username=<span class="hljs-string">&quot;admin&quot;</span> password=<span class="hljs-string">&quot;1qaz2wsx&quot;</span> role=<span class="hljs-string">&quot;admin-gui&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
 
-<h2 id="Set-Tomcat-User"><a href="#Set-Tomcat-User" class="headerlink" title="Set Tomcat User"></a>Set Tomcat User</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cd $CATALINA_HOME&#x2F;conf &amp;&amp; vim tomcat-users.xml
+<h2 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ sudo chmod 777 <span class="hljs-variable">$CATALINA_HOME</span>/bin/*.sh<br>$ sudo chmod 666 <span class="hljs-variable">$CATALINA_HOME</span>/logs/<br>$ sudo chmod 666 <span class="hljs-variable">$CATALINA_HOME</span>/logs/*<br></code></pre></td></tr></table></figure>
 
-# tomcat-users.xml
-&lt;user username&#x3D;&quot;admin&quot; password&#x3D;&quot;1qaz2wsx&quot; role&#x3D;&quot;admin-gui&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Start-Tomcat"><a href="#Start-Tomcat" class="headerlink" title="Start Tomcat"></a>Start Tomcat</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$CATALINA_HOME</span>/bin/<br>$ ./startup.sh<br></code></pre></td></tr></table></figure>
+<h2 id="Stop-Tomcat"><a href="#Stop-Tomcat" class="headerlink" title="Stop Tomcat"></a>Stop Tomcat</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ ./shutdown.sh<br></code></pre></td></tr></table></figure>
 
-<h2 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ sudo chmod 777 $CATALINA_HOME&#x2F;bin&#x2F;*.sh
-$ sudo chmod 666 $CATALINA_HOME&#x2F;logs&#x2F;
-$ sudo chmod 666 $CATALINA_HOME&#x2F;logs&#x2F;*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Start-Tomcat"><a href="#Start-Tomcat" class="headerlink" title="Start Tomcat"></a>Start Tomcat</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cd $CATALINA_HOME&#x2F;bin&#x2F;
-$ .&#x2F;startup.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="Stop-Tomcat"><a href="#Stop-Tomcat" class="headerlink" title="Stop Tomcat"></a>Stop Tomcat</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ .&#x2F;shutdown.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ mkdir -p ~&#x2F;docker-data&#x2F;tomcat&#x2F;conf ~&#x2F;docker-data&#x2F;tomcat&#x2F;webapps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker run -d --name tomcat-service -p 8080:8080 -v ~&#x2F;docker-data&#x2F;tomcat&#x2F;conf:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;conf -v ~&#x2F;docker-data&#x2F;tomcat&#x2F;webapps&#x2F;:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ mkdir -p ~/docker-data/tomcat/conf ~/docker-data/tomcat/webapps<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ docker run -d --name tomcat-service -p 8080:8080 -v ~/docker-data/tomcat/conf:/usr/<span class="hljs-built_in">local</span>/tomcat/conf -v ~/docker-data/tomcat/webapps/:/usr/<span class="hljs-built_in">local</span>/tomcat/webapps tomcat<br></code></pre></td></tr></table></figure>
 
 <!-- Tags -->
 

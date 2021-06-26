@@ -143,86 +143,39 @@
 
 <h2 id="Install-HomeBrew"><a href="#Install-HomeBrew" class="headerlink" title="Install HomeBrew"></a>Install HomeBrew</h2><p>Linux上面都會有PackageManager，例如<code>apt-get</code> <code>yum</code> <code>pacman</code><br>任何軟體只要Repository上面有都可以安裝及管理，但Mac剛好缺少了這個東西，所以我們第一個就來裝它，之後軟體都靠它來管理會方便許多</p>
 <p><a target="_blank" rel="noopener" href="https://brew.sh/index_zh-tw">HomeBrew 官網</a></p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">/usr/bin/ruby -e <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="Install-Application-Upgrade-plugin"><a href="#Install-Application-Upgrade-plugin" class="headerlink" title="Install Application-Upgrade plugin"></a>Install Application-Upgrade plugin</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew tap buo&#x2F;cask-upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Install-Application-Upgrade-plugin"><a href="#Install-Application-Upgrade-plugin" class="headerlink" title="Install Application-Upgrade plugin"></a>Install Application-Upgrade plugin</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ brew tap buo/cask-upgrade<br></code></pre></td></tr></table></figure>
 
-<h2 id="Download-Command"><a href="#Download-Command" class="headerlink" title="Download Command"></a>Download Command</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># zsh
-# zsh-syntax-highlighting
-# zsh-...
-# youtube-dl
-# mps-youtube - command line youtube player
-# ffmpeg - youtube-dl dependency command
-# tree
-# wget
-# mysql
-# ntop
-# gcc
-# g++
-# java
-# maven
-# docker
-# tomcat
+<h2 id="Download-Command"><a href="#Download-Command" class="headerlink" title="Download Command"></a>Download Command</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># zsh</span><br><span class="hljs-comment"># zsh-syntax-highlighting</span><br><span class="hljs-comment"># zsh-...</span><br><span class="hljs-comment"># youtube-dl</span><br><span class="hljs-comment"># mps-youtube - command line youtube player</span><br><span class="hljs-comment"># ffmpeg - youtube-dl dependency command</span><br><span class="hljs-comment"># tree</span><br><span class="hljs-comment"># wget</span><br><span class="hljs-comment"># mysql</span><br><span class="hljs-comment"># ntop</span><br><span class="hljs-comment"># gcc</span><br><span class="hljs-comment"># g++</span><br><span class="hljs-comment"># java</span><br><span class="hljs-comment"># maven</span><br><span class="hljs-comment"># docker</span><br><span class="hljs-comment"># tomcat</span><br><br>$ brew install zsh zsh-syntax-highlighting youtube-dl ffmpeg tree wget mysql ntop gcc g++ java maven docker tomcat<br></code></pre></td></tr></table></figure>
 
-$ brew install zsh zsh-syntax-highlighting youtube-dl ffmpeg tree wget mysql ntop gcc g++ java maven docker tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Download-Config-file"><a href="#Download-Config-file" class="headerlink" title="Download Config file"></a>Download Config file</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ git clone http:&#x2F;&#x2F;github.com&#x2F;t0239184&#x2F;macEnviroment.git
-$ cd macEnviroment
-$ cp .zshrc ~&#x2F;.zshrc
-$ cp .vimrc ~&#x2F;.vimrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Download-Config-file"><a href="#Download-Config-file" class="headerlink" title="Download Config file"></a>Download Config file</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ git <span class="hljs-built_in">clone</span> http://github.com/t0239184/macEnviroment.git<br>$ <span class="hljs-built_in">cd</span> macEnviroment<br>$ cp .zshrc ~/.zshrc<br>$ cp .vimrc ~/.vimrc<br></code></pre></td></tr></table></figure>
 
 <h2 id="Macbook-Air-ICC描述檔修正"><a href="#Macbook-Air-ICC描述檔修正" class="headerlink" title="Macbook Air ICC描述檔修正"></a>Macbook Air ICC描述檔修正</h2><p>修正 2012 MacbookAir ICC描述檔使螢幕對比不強烈的問題</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cp CustomMacRumors.icc &#x2F;Library&#x2F;ColorSync&#x2F;Profiles&#x2F;Display&#x2F;CustomMacRumors.icc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ cp CustomMacRumors.icc /Library/ColorSync/Profiles/Display/CustomMacRumors.icc<br></code></pre></td></tr></table></figure>
 <p>開啟System Preferences &gt; Displays &gt; Color &gt; Display profile : Color LCD</p>
-<h2 id="Download-Application"><a href="#Download-Application" class="headerlink" title="Download Application"></a>Download Application</h2><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># iterm2-終端機軟體  macvim-GUI-Vim
+<h2 id="Download-Application"><a href="#Download-Application" class="headerlink" title="Download Application"></a>Download Application</h2><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># iterm2-終端機軟體  macvim-GUI-Vim</span><br><br>$ brew cask install iterm2 macvim <br></code></pre></td></tr></table></figure>
 
-$ brew cask install iterm2 macvim <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Common-Application"><a href="#Common-Application" class="headerlink" title="Common Application"></a>Common Application</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># smcfancontrol - 風扇管理
-# karabiner-elements - 鍵盤映射管理
-# spectacle - 視窗管理
-# lacona - Super Spotlight
-# the-unarchiver - 解壓縮軟體
-# appcleaner - APP移除軟體
-
-$ brew cask install smcfancontrol spectacle karabiner-element lacona the-unarchiver appcleaner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Common-Application"><a href="#Common-Application" class="headerlink" title="Common Application"></a>Common Application</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># smcfancontrol - 風扇管理</span><br><span class="hljs-comment"># karabiner-elements - 鍵盤映射管理</span><br><span class="hljs-comment"># spectacle - 視窗管理</span><br><span class="hljs-comment"># lacona - Super Spotlight</span><br><span class="hljs-comment"># the-unarchiver - 解壓縮軟體</span><br><span class="hljs-comment"># appcleaner - APP移除軟體</span><br><br>$ brew cask install smcfancontrol spectacle karabiner-element lacona the-unarchiver appcleaner<br></code></pre></td></tr></table></figure>
 
 
-<h3 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install chrome firefox<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ brew cask install chrome firefox<br></code></pre></td></tr></table></figure>
 
-<h3 id="Edit"><a href="#Edit" class="headerlink" title="Edit"></a>Edit</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install macdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<h3 id="Quick-look-plugin"><a href="#Quick-look-plugin" class="headerlink" title="Quick look plugin"></a>Quick look plugin</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># qlcolorcode
-# qlimagesize
-# quicklook-json
-# quickloog-pat
-
-$ brew cask install qlcolorcode qlimagesize quicklook-json quickloog-pat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Edit"><a href="#Edit" class="headerlink" title="Edit"></a>Edit</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ brew cask install macdown<br></code></pre></td></tr></table></figure>
 
 
-<h3 id="Office"><a href="#Office" class="headerlink" title="Office"></a>Office</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># libreoffice - OpenSource Office
-# pages - iWork Word
-# keynote - iWork PowerPoint
-
-$ brew cask install libreoffice pages keynote<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Quick-look-plugin"><a href="#Quick-look-plugin" class="headerlink" title="Quick look plugin"></a>Quick look plugin</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># qlcolorcode</span><br><span class="hljs-comment"># qlimagesize</span><br><span class="hljs-comment"># quicklook-json</span><br><span class="hljs-comment"># quickloog-pat</span><br><br>$ brew cask install qlcolorcode qlimagesize quicklook-json quickloog-pat<br></code></pre></td></tr></table></figure>
 
 
-<h3 id="Player"><a href="#Player" class="headerlink" title="Player"></a>Player</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># iina - Movie Player
-# vlc - Media Player
+<h3 id="Office"><a href="#Office" class="headerlink" title="Office"></a>Office</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># libreoffice - OpenSource Office</span><br><span class="hljs-comment"># pages - iWork Word</span><br><span class="hljs-comment"># keynote - iWork PowerPoint</span><br><br>$ brew cask install libreoffice pages keynote<br></code></pre></td></tr></table></figure>
 
-$ brew cask install iina vlc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Image-Edit"><a href="#Image-Edit" class="headerlink" title="Image Edit"></a>Image Edit</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># gimp - OpenSource Image Edit
-# photo image editor pixelstyle - Very like photoshop app
+<h3 id="Player"><a href="#Player" class="headerlink" title="Player"></a>Player</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># iina - Movie Player</span><br><span class="hljs-comment"># vlc - Media Player</span><br><br>$ brew cask install iina vlc<br></code></pre></td></tr></table></figure>
 
-$ brew cask install gimp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="GitGUI"><a href="#GitGUI" class="headerlink" title="GitGUI"></a>GitGUI</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># sourcetree - GitGUI
-# gitkraken - OpenSource GitGUI 特色為拖拉Branch
+<h3 id="Image-Edit"><a href="#Image-Edit" class="headerlink" title="Image Edit"></a>Image Edit</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># gimp - OpenSource Image Edit</span><br><span class="hljs-comment"># photo image editor pixelstyle - Very like photoshop app</span><br><br>$ brew cask install gimp<br></code></pre></td></tr></table></figure>
+<h3 id="GitGUI"><a href="#GitGUI" class="headerlink" title="GitGUI"></a>GitGUI</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># sourcetree - GitGUI</span><br><span class="hljs-comment"># gitkraken - OpenSource GitGUI 特色為拖拉Branch</span><br><br>$ brew cask install sourcetree gitkraken<br></code></pre></td></tr></table></figure>
 
-$ brew cask install sourcetree gitkraken<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install android-studio<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ brew cask install android-studio<br></code></pre></td></tr></table></figure>
 
 
 
