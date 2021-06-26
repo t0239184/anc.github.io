@@ -20,6 +20,8 @@
 
     <!--Open Graph Title-->
     
+        <meta property="og:title" content="Nginx"/>
+    
 
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="ANCS"/>
@@ -31,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2021 - ANCS</title>
+    <title>Nginx - ANCS</title>
 
     <!-- Custom CSS -->
     
@@ -128,123 +130,53 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1>Nginx</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>Nginx是一個反向代理的軟體，但什麼是反向代理，那就要先了解什麼是正向代理，下面有一張網路上找到的圖可以簡單表示</p>
+<p><img src="https://09.imgmini.eastday.com/mobile/20180511/20180511173448_f19ec4727731bd7ccac8e04a47ff0ee6_1.jpeg" alt="proxy"></p>
+<h2 id="Install-Nginx"><a href="#Install-Nginx" class="headerlink" title="Install Nginx"></a>Install Nginx</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="開啟背景服務"><a href="#開啟背景服務" class="headerlink" title="開啟背景服務"></a>開啟背景服務</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  ~ brew services start nginx
+<span class="token operator">==</span><span class="token operator">></span> Tapping homebrew/services
+Cloning into <span class="token string">'/usr/local/Homebrew/Library/Taps/homebrew/homebrew-services'</span><span class="token punctuation">..</span>.
+remote: Enumerating objects: <span class="token number">17</span>, done.
+remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">17</span>/17<span class="token punctuation">)</span>, done.
+remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">14</span>/14<span class="token punctuation">)</span>, done.
+remote: Total <span class="token number">17</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">12</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, pack-reused <span class="token number">0</span>
+Unpacking objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">17</span>/17<span class="token punctuation">)</span>, done.
+Tapped <span class="token number">1</span> <span class="token builtin class-name">command</span> <span class="token punctuation">(</span><span class="token number">50</span> files, <span class="token number">62</span>.5KB<span class="token punctuation">)</span>.
+<span class="token operator">==</span><span class="token operator">></span> Successfully started <span class="token variable"><span class="token variable">`</span>nginx<span class="token variable">`</span></span> <span class="token punctuation">(</span>label: homebrew.mxcl.nginx<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use?"></a>How to use?</h3><p>如果要是在 mac 用 brew 裝的話，在 /usr/local/etc/nginx/nginx.conf 這邊可以設定 nginx 的一些環境。</p>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Proxy/" class="button small">Proxy</a> <a href="/tags/Nginx/" class="button small">Nginx</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/24/ajax/">AJAX</a>
-</li>
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-        
-            <li>
-    <a href="/2019/04/22/brew-service/">Brew Service</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/27/compiler-run-java-in-sublime/">Compiler & Run Java in Sublime</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/22/docker-basic/">Docker Basic</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-file/">Dockerfile</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-volume/">Docker Volume</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/19/github-and-hexo/">Github & Hexo</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/28/hexo-deploy-error/">Hexo Deploy Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/homebrew-loaderror/">Homebrew Load Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/javascript-ajax-function/">JavaScript AJAX Function</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/20/mac-enviroment/">Mac Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/mysql-basic/">Mysql config & basic syntax</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/nohup/">nohup</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/react-note/">react-note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/same-origin-policy/">Same Origin Policy 同源政策</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/tomcat-enviroment/">Tomcat Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/vuejs/">Vue.js</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/hexo/hexo-init/">Hexo使用教學</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/regex/common-regex-pattern/">常用Regex Pattern</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/arch-linux-note/">Arch Linux Note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/21/springboot-start-option/">Springboot Start Option</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
@@ -344,7 +276,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

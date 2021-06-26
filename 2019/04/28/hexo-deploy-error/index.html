@@ -20,6 +20,8 @@
 
     <!--Open Graph Title-->
     
+        <meta property="og:title" content="Hexo Deploy Error"/>
+    
 
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="ANCS"/>
@@ -31,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2021 - ANCS</title>
+    <title>Hexo Deploy Error - ANCS</title>
 
     <!-- Custom CSS -->
     
@@ -128,123 +130,53 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1>Hexo Deploy Error</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>最近在換回舊的Mac的時候，發現了Depoly有問題</p>
+<h3 id="fatal-in-unpopulated-submodule-‘-deploy-git’"><a href="#fatal-in-unpopulated-submodule-‘-deploy-git’" class="headerlink" title="fatal: in unpopulated submodule ‘.deploy_git’"></a>fatal: in unpopulated submodule ‘.deploy_git’</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo d
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+INFO  Copying files from extend dirs...
+fatal: in unpopulated submodule &#39;.deploy_git&#39;
+FATAL Something&#39;s wrong. Maybe you can find the solution here: http:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.&lt;anonymous&gt; (&#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;hexo-util&#x2F;lib&#x2F;spawn.js:52:19)
+    at ChildProcess.emit (events.js:193:13)
+    at Process.ChildProcess._handle.onexit (internal&#x2F;child_process.js:255:12)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ rm -rf .deploy_git
+$ hexo d -g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Hexo/" class="button small">Hexo</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/24/ajax/">AJAX</a>
-</li>
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-        
-            <li>
-    <a href="/2019/04/22/brew-service/">Brew Service</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/27/compiler-run-java-in-sublime/">Compiler & Run Java in Sublime</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/22/docker-basic/">Docker Basic</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-file/">Dockerfile</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-volume/">Docker Volume</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/19/github-and-hexo/">Github & Hexo</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/28/hexo-deploy-error/">Hexo Deploy Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/homebrew-loaderror/">Homebrew Load Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/javascript-ajax-function/">JavaScript AJAX Function</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/20/mac-enviroment/">Mac Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/mysql-basic/">Mysql config & basic syntax</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/nohup/">nohup</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/react-note/">react-note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/same-origin-policy/">Same Origin Policy 同源政策</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/tomcat-enviroment/">Tomcat Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/vuejs/">Vue.js</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/hexo/hexo-init/">Hexo使用教學</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/regex/common-regex-pattern/">常用Regex Pattern</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/arch-linux-note/">Arch Linux Note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/21/springboot-start-option/">Springboot Start Option</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
@@ -344,7 +276,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

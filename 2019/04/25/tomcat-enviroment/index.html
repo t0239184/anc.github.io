@@ -20,6 +20,8 @@
 
     <!--Open Graph Title-->
     
+        <meta property="og:title" content="Tomcat Enviroment"/>
+    
 
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="ANCS"/>
@@ -31,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2021 - ANCS</title>
+    <title>Tomcat Enviroment - ANCS</title>
 
     <!-- Custom CSS -->
     
@@ -128,123 +130,61 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1>Tomcat Enviroment</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<h2 id="Install-Tomcat"><a href="#Install-Tomcat" class="headerlink" title="Install Tomcat"></a>Install Tomcat</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew install tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Set-Enviroment-Variable"><a href="#Set-Enviroment-Variable" class="headerlink" title="Set Enviroment Variable"></a>Set Enviroment Variable</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim ~&#x2F;.zshrc
+
+# ~&#x2F;.zshrc
+export CATALINA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;tomcat&#x2F;9.0.17&#x2F;libexec
+export PATH&#x3D;$CATALINA_HOME&#x2F;bin:$PATH
+export CLASSPATH&#x3D;.:$JAVA_HOME&#x2F;jre&#x2F;lib:$JAVA_HOME&#x2F;lib:$JAVA_HOME&#x2F;lib&#x2F;tools.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Set-Tomcat-User"><a href="#Set-Tomcat-User" class="headerlink" title="Set Tomcat User"></a>Set Tomcat User</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cd $CATALINA_HOME&#x2F;conf &amp;&amp; vim tomcat-users.xml
+
+# tomcat-users.xml
+&lt;user username&#x3D;&quot;admin&quot; password&#x3D;&quot;1qaz2wsx&quot; role&#x3D;&quot;admin-gui&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ sudo chmod 777 $CATALINA_HOME&#x2F;bin&#x2F;*.sh
+$ sudo chmod 666 $CATALINA_HOME&#x2F;logs&#x2F;
+$ sudo chmod 666 $CATALINA_HOME&#x2F;logs&#x2F;*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Start-Tomcat"><a href="#Start-Tomcat" class="headerlink" title="Start Tomcat"></a>Start Tomcat</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cd $CATALINA_HOME&#x2F;bin&#x2F;
+$ .&#x2F;startup.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="Stop-Tomcat"><a href="#Stop-Tomcat" class="headerlink" title="Stop Tomcat"></a>Stop Tomcat</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ .&#x2F;shutdown.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ mkdir -p ~&#x2F;docker-data&#x2F;tomcat&#x2F;conf ~&#x2F;docker-data&#x2F;tomcat&#x2F;webapps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker run -d --name tomcat-service -p 8080:8080 -v ~&#x2F;docker-data&#x2F;tomcat&#x2F;conf:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;conf -v ~&#x2F;docker-data&#x2F;tomcat&#x2F;webapps&#x2F;:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Tomcat/" class="button small">Tomcat</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/24/ajax/">AJAX</a>
-</li>
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-        
-            <li>
-    <a href="/2019/04/22/brew-service/">Brew Service</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/27/compiler-run-java-in-sublime/">Compiler & Run Java in Sublime</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/22/docker-basic/">Docker Basic</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-file/">Dockerfile</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-volume/">Docker Volume</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/19/github-and-hexo/">Github & Hexo</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/28/hexo-deploy-error/">Hexo Deploy Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/homebrew-loaderror/">Homebrew Load Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/javascript-ajax-function/">JavaScript AJAX Function</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/20/mac-enviroment/">Mac Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/mysql-basic/">Mysql config & basic syntax</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/nohup/">nohup</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/react-note/">react-note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/same-origin-policy/">Same Origin Policy 同源政策</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/tomcat-enviroment/">Tomcat Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/vuejs/">Vue.js</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/hexo/hexo-init/">Hexo使用教學</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/regex/common-regex-pattern/">常用Regex Pattern</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/arch-linux-note/">Arch Linux Note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/21/springboot-start-option/">Springboot Start Option</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
@@ -344,7 +284,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

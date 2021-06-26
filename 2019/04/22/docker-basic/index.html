@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Record my idea and technical note space.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Alan Chen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Docker Basic"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="ANCS"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>Docker Basic - ANCS</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/sass/main.css">
+
+
+    <!--[if lt IE 8]>
+        
+<script src="/js/ie/html5shiv.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        
+<link rel="stylesheet" href="/sass/ie8.css">
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        
+<link rel="stylesheet" href="/sass/ie9.css">
+
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Techical</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Life</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Idea</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>Docker Basic</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>Docker有分三個部分</p>
+<ul>
+<li>docker</li>
+<li>dockerfile</li>
+<li>docker-compose</li>
+</ul>
+<p>這邊主要講關於Docker的基本指令，而後面還有Volume，Host與Container的資料互動</p>
+<span id="more"></span>
+
+<h2 id="Install-Docker"><a href="#Install-Docker" class="headerlink" title="Install Docker"></a>Install Docker</h2><p>Mac</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install docker
+$ open &#x2F;Application&#x2F;docker.app<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker --version
+Docker version <span class="token number">18.09</span>.2, build <span class="token number">6247962</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><h3 id="login"><a href="#login" class="headerlink" title="login"></a>login</h3><p>登入參數如下，發現有三種參數，可以通通不輸入，他會問你帳號密碼，也可以只輸入<code>-u</code>帶入帳號，它就會問你密碼剩餘的兩個<code>--password string</code>是明碼輸入，<code>--password-stdin</code>是讀取文件中的字串，所以建議不加入參數，或者只使用<code>-u</code>會相對安全些。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Usage:	docker login <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span> <span class="token punctuation">[</span>SERVER<span class="token punctuation">]</span>
+
+Log <span class="token keyword">in</span> to a Docker registry <span class="token punctuation">(</span>如果未輸入 Server 則預設登入 Docker Hub<span class="token punctuation">)</span>
+
+Options:
+  -p, --password string   Password
+      --password-stdin    Take the password from stdin
+  -u, --username string   Username
+  
+$ docker login -u t0239184 -p *********
+WARNING<span class="token operator">!</span> Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="logout"><a href="#logout" class="headerlink" title="logout"></a>logout</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker <span class="token builtin class-name">logout</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="search-Search-Image"><a href="#search-Search-Image" class="headerlink" title="search : Search Image"></a>search : Search Image</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker search ubuntu
+NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+ubuntu                                                 Ubuntu is a Debian-based Linux operating sys…   <span class="token number">9332</span>                <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>
+dorowu/ubuntu-desktop-lxde-vnc                         Docker image to provide HTML5 VNC interface …   <span class="token number">282</span>                                     <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>
+<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>下載 Docker image 時，盡量使用 official image，而不要使用別人包過的 image，因為可能會有後門或木馬</p>
+</blockquote>
+<h3 id="pull-Download-Image"><a href="#pull-Download-Image" class="headerlink" title="pull : Download Image"></a>pull : Download Image</h3><p>下載的時候需要指名ImageName，<code>:</code>後為版本號，非必填，預設為<code>latest</code></p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker pull ubuntu:latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><h4 id="list-Images"><a href="#list-Images" class="headerlink" title="list Images"></a>list Images</h4><p>Image清單</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker image ls
+or 
+$ docker images<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="remove-image"><a href="#remove-image" class="headerlink" title="remove image"></a>remove image</h4><p>移除Image</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker image rm &lt;ImageID&gt;
+or
+$ docker rmi &lt;ImageId&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="ps-Exist-Container"><a href="#ps-Exist-Container" class="headerlink" title="ps : Exist Container"></a>ps : Exist Container</h3><p>顯示已建立的Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 預設只顯示正在執行的Job -a：顯示全部Container
+$ docker ps -a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="rm-Remove-Container"><a href="#rm-Remove-Container" class="headerlink" title="rm : Remove Container"></a>rm : Remove Container</h3><p>移除Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker rm &lt;containerId or Name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="run-create-container-and-run-container"><a href="#run-create-container-and-run-container" class="headerlink" title="run : create container and run container"></a>run : create container and run container</h3><p>建立Container &amp; 執行Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">    -d 於Docker背景執行
+    -p 指定Port號
+  --rm Container執行結束，刪除Container
+--name 指定Container名稱    
+
+$ docker run -d -p 8080:8080 --rm --name&#x3D;ubuntu-1 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>Ctrl+p+q 可以由正在執行中的Container中跳出，讓Container繼續在Docker背景執行，我們可以繼續做其他的事情</p>
+</blockquote>
+<h3 id="start-start-container"><a href="#start-start-container" class="headerlink" title="start : start container"></a>start : start container</h3><p>啟動已停止的Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker start &lt;ExistContainerId or Name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="stop-stop-container"><a href="#stop-stop-container" class="headerlink" title="stop : stop container"></a>stop : stop container</h3><p>停止正在執行的Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker stop &lt;containerId or Name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>停止所有Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker stop $(docker ps -aq)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<h3 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h3><p>進入執行中的Container</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: &lt;name|uid&gt;[:&lt;group|gid&gt;])
+  -w, --workdir string       Working directory inside the container
+
+$ docker exec -it &lt;containerId or Name&gt; bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="logs"><a href="#logs" class="headerlink" title="logs"></a>logs</h3><p>查看執行中Container的stdout</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker logs centos1
+...略
+64 bytes from 8.8.8.8: icmp_seq&#x3D;650 ttl&#x3D;37 time&#x3D;77.5 ms
+64 bytes from 8.8.8.8: icmp_seq&#x3D;651 ttl&#x3D;37 time&#x3D;88.5 ms
+64 bytes from 8.8.8.8: icmp_seq&#x3D;652 ttl&#x3D;37 time&#x3D;45.8 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>上面是Docker的基本知識，後面接著來講Volume。</p>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Docker/" class="button small">Docker</a> <a href="/tags/Linux/" class="button small">Linux</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+                
+                
+                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
+                
+                
+                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
+                
+                
+                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
+                
+                
+                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
+                
+                
+                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- skel -->
+
+<script src="/js/skel.min.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/util.js"></script>
+
+
+<!--[if lte IE 8]>
+
+<script src="/js/ie/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

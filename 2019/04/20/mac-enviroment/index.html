@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Record my idea and technical note space.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Alan Chen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Mac Enviroment"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="ANCS"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>Mac Enviroment - ANCS</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/sass/main.css">
+
+
+    <!--[if lt IE 8]>
+        
+<script src="/js/ie/html5shiv.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        
+<link rel="stylesheet" href="/sass/ie8.css">
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        
+<link rel="stylesheet" href="/sass/ie9.css">
+
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Techical</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Life</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Idea</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>Mac Enviroment</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>這篇文章主要在Mac的環境建置上，會寫這篇主要是之前剛好有換HDD到SSD，想說乾脆重裝一套乾淨的系統，同時也可以檢視一下有沒有什麼東西可以整合在一起的，還有哪些是不需要的，所以當初就記錄下來了，後來手上剛好有一台臨時的Air可以用，這篇記錄就派上了用場。</p>
+<span id="more"></span>
+
+<h2 id="Install-HomeBrew"><a href="#Install-HomeBrew" class="headerlink" title="Install HomeBrew"></a>Install HomeBrew</h2><p>Linux上面都會有PackageManager，例如<code>apt-get</code> <code>yum</code> <code>pacman</code><br>任何軟體只要Repository上面有都可以安裝及管理，但Mac剛好缺少了這個東西，所以我們第一個就來裝它，之後軟體都靠它來管理會方便許多</p>
+<p><a target="_blank" rel="noopener" href="https://brew.sh/index_zh-tw">HomeBrew 官網</a></p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Install-Application-Upgrade-plugin"><a href="#Install-Application-Upgrade-plugin" class="headerlink" title="Install Application-Upgrade plugin"></a>Install Application-Upgrade plugin</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew tap buo&#x2F;cask-upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Download-Command"><a href="#Download-Command" class="headerlink" title="Download Command"></a>Download Command</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># zsh
+# zsh-syntax-highlighting
+# zsh-...
+# youtube-dl
+# mps-youtube - command line youtube player
+# ffmpeg - youtube-dl dependency command
+# tree
+# wget
+# mysql
+# ntop
+# gcc
+# g++
+# java
+# maven
+# docker
+# tomcat
+
+$ brew install zsh zsh-syntax-highlighting youtube-dl ffmpeg tree wget mysql ntop gcc g++ java maven docker tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Download-Config-file"><a href="#Download-Config-file" class="headerlink" title="Download Config file"></a>Download Config file</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ git clone http:&#x2F;&#x2F;github.com&#x2F;t0239184&#x2F;macEnviroment.git
+$ cd macEnviroment
+$ cp .zshrc ~&#x2F;.zshrc
+$ cp .vimrc ~&#x2F;.vimrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Macbook-Air-ICC描述檔修正"><a href="#Macbook-Air-ICC描述檔修正" class="headerlink" title="Macbook Air ICC描述檔修正"></a>Macbook Air ICC描述檔修正</h2><p>修正 2012 MacbookAir ICC描述檔使螢幕對比不強烈的問題</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cp CustomMacRumors.icc &#x2F;Library&#x2F;ColorSync&#x2F;Profiles&#x2F;Display&#x2F;CustomMacRumors.icc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>開啟System Preferences &gt; Displays &gt; Color &gt; Display profile : Color LCD</p>
+<h2 id="Download-Application"><a href="#Download-Application" class="headerlink" title="Download Application"></a>Download Application</h2><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># iterm2-終端機軟體  macvim-GUI-Vim
+
+$ brew cask install iterm2 macvim <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Common-Application"><a href="#Common-Application" class="headerlink" title="Common Application"></a>Common Application</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># smcfancontrol - 風扇管理
+# karabiner-elements - 鍵盤映射管理
+# spectacle - 視窗管理
+# lacona - Super Spotlight
+# the-unarchiver - 解壓縮軟體
+# appcleaner - APP移除軟體
+
+$ brew cask install smcfancontrol spectacle karabiner-element lacona the-unarchiver appcleaner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install chrome firefox<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Edit"><a href="#Edit" class="headerlink" title="Edit"></a>Edit</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install macdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h3 id="Quick-look-plugin"><a href="#Quick-look-plugin" class="headerlink" title="Quick look plugin"></a>Quick look plugin</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># qlcolorcode
+# qlimagesize
+# quicklook-json
+# quickloog-pat
+
+$ brew cask install qlcolorcode qlimagesize quicklook-json quickloog-pat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="Office"><a href="#Office" class="headerlink" title="Office"></a>Office</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># libreoffice - OpenSource Office
+# pages - iWork Word
+# keynote - iWork PowerPoint
+
+$ brew cask install libreoffice pages keynote<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="Player"><a href="#Player" class="headerlink" title="Player"></a>Player</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># iina - Movie Player
+# vlc - Media Player
+
+$ brew cask install iina vlc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Image-Edit"><a href="#Image-Edit" class="headerlink" title="Image Edit"></a>Image Edit</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># gimp - OpenSource Image Edit
+# photo image editor pixelstyle - Very like photoshop app
+
+$ brew cask install gimp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="GitGUI"><a href="#GitGUI" class="headerlink" title="GitGUI"></a>GitGUI</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># sourcetree - GitGUI
+# gitkraken - OpenSource GitGUI 特色為拖拉Branch
+
+$ brew cask install sourcetree gitkraken<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ brew cask install android-studio<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Mac/" class="button small">Mac</a> <a href="/tags/HomeBrew/" class="button small">HomeBrew</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+                
+                
+                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
+                
+                
+                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
+                
+                
+                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
+                
+                
+                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
+                
+                
+                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- skel -->
+
+<script src="/js/skel.min.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/util.js"></script>
+
+
+<!--[if lte IE 8]>
+
+<script src="/js/ie/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

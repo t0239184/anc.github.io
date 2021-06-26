@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Record my idea and technical note space.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Alan Chen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Github &amp; Hexo"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="ANCS"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>Github &amp; Hexo - ANCS</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/sass/main.css">
+
+
+    <!--[if lt IE 8]>
+        
+<script src="/js/ie/html5shiv.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        
+<link rel="stylesheet" href="/sass/ie8.css">
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        
+<link rel="stylesheet" href="/sass/ie9.css">
+
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Techical</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Life</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Idea</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>Github & Hexo</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>之前就有使用Git的習慣，所以知道Github可以存放靜態網頁，但到今天才真正的去了解，除了伺服器端的東西無法以外，剩下的例如 <code>HTML</code> <code>JS</code> <code>CSS</code> 等等的都可以在上面執行，那這樣就非常方便了，接著又找到有許多的工具可以幫助你更快的建立相關的版面，於是今天就使用了Hexo建立了現在這個Blog，那麼下面就簡單的紀錄怎麼建立一個GitPage的blog。</p>
+<span id="more"></span>
+
+<h2 id="Required-Package"><a href="#Required-Package" class="headerlink" title="Required Package"></a>Required Package</h2><ul>
+<li><code>git</code></li>
+<li><code>nodejs</code></li>
+<li><code>npm</code></li>
+</ul>
+<h2 id="Install-Hexo-amp-Hexo-Git"><a href="#Install-Hexo-amp-Hexo-Git" class="headerlink" title="Install Hexo &amp; Hexo Git"></a>Install Hexo &amp; Hexo Git</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ npm install hexo-cli -g
+$ npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Create-Blog-by-Hexo"><a href="#Create-Blog-by-Hexo" class="headerlink" title="Create Blog by Hexo"></a>Create Blog by Hexo</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ Documents hexo init blog
+INFO  Cloning hexo-starter to ~&#x2F;Documents&#x2F;blog
+Cloning into &#39;&#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#39;...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3&#x2F;3), done.
+remote: Compressing objects: 100% (3&#x2F;3), done.
+Unpacking objects: 100% (71&#x2F;71), done.
+remote: Total 71 (delta 0), reused 0 (delta 0), pack-reused 68
+Submodule &#39;themes&#x2F;landscape&#39; (https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo-theme-landscape.git) registered for path &#39;themes&#x2F;landscape&#39;
+Cloning into &#39;&#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;themes&#x2F;landscape&#39;...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16&#x2F;16), done.
+remote: Compressing objects: 100% (13&#x2F;13), done.
+remote: Total 893 (delta 3), reused 12 (delta 2), pack-reused 877
+Receiving objects: 100% (893&#x2F;893), 2.56 MiB | 115.00 KiB&#x2F;s, done.
+Resolving deltas: 100% (466&#x2F;466), done.
+Submodule path &#39;themes&#x2F;landscape&#39;: checked out &#39;73a23c51f8487cfcd7c6deec96ccc7543960d350&#39;
+INFO  Install dependencies
+yarn install v1.15.2
+info No lockfile found.
+[1&#x2F;4] 🔍  Resolving packages...
+warning hexo &gt; warehouse &gt; cuid &gt; core-js@1.2.7: core-js@&lt;2.6.5 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
+[2&#x2F;4] 🚚  Fetching packages...
+[3&#x2F;4] 🔗  Linking dependencies...
+[4&#x2F;4] 🔨  Building fresh packages...
+success Saved lockfile.
+✨  Done in 15.31s.
+INFO  Start blogging with Hexo!
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Install-npm-dependency-package"><a href="#Install-npm-dependency-package" class="headerlink" title="Install npm dependency package"></a>Install npm dependency package</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ Documents cd blog
+$ npm install
+npm WARN deprecated core-js@1.2.7: core-js@&lt;2.6.5 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
+npm WARN rm not removing &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;.bin&#x2F;rimraf as it wasn&#39;t installed by &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;rimraf
+npm WARN rm not removing &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;.bin&#x2F;nopt as it wasn&#39;t installed by &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;nopt
+
+&gt; fsevents@1.2.8 install &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;fsevents
+&gt; node install
+
+node-pre-gyp WARN Using needle for node-pre-gyp https download
+[fsevents] Success: &quot;&#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;node_modules&#x2F;fsevents&#x2F;lib&#x2F;binding&#x2F;Release&#x2F;node-v67-darwin-x64&#x2F;fse.node&quot; is installed via remote
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 101 packages from 37 contributors, removed 80 packages, updated 322 packages and audited 4697 packages in 33.397s
+found 3 vulnerabilities (2 low, 1 moderate)
+  run &#96;npm audit fix&#96; to fix them, or &#96;npm audit&#96; for details<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ ls
+.&#x2F;                 .gitignore         node_modules&#x2F;      package.json       source&#x2F;            yarn.lock
+..&#x2F;                _config.yml        package-lock.json  scaffolds&#x2F;         themes&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Create-new-Github-repository"><a href="#Create-new-Github-repository" class="headerlink" title="Create new Github repository"></a>Create new Github repository</h2><p>首先我們必須去Github建立一個新的repository，但這個名稱就有限定，必須以<code>yourName.github.io</code>這樣的規則命名，這樣才可以使用gitPage。</p>
+<h2 id="Remote-repository-setting"><a href="#Remote-repository-setting" class="headerlink" title="Remote repository setting"></a>Remote repository setting</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim _config.yml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># _config.yml</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repository</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//github.com/t0239184/alan.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo generate
+or
+$ hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Run-Local-Server"><a href="#Run-Local-Server" class="headerlink" title="Run Local Server"></a>Run Local Server</h2><p>可以啟動本機端的Server來查看目前畫面會是什麼樣子</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo server
+INFO  Start processing
+WARN  &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+WARN  &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; ATTENTION! &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+WARN  &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+WARN   NexT repository is moving here: https:&#x2F;&#x2F;github.com&#x2F;theme-next
+WARN  &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+WARN   It&#39;s rebase to v6.0.0 and future maintenance will resume there
+WARN  &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000 . Press Ctrl+C to stop.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo deploy
+or
+$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><em><strong>錯誤處理 : ERROR Deployer not found: git</strong></em></p>
+</blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ npm install hexo-deployer-git --save
+npm WARN babel-eslint@10.0.1 requires a peer of eslint@&gt;&#x3D; 4.12.1 but none is installed. You must install peer dependencies yourself.
+&gt;
++ hexo-deployer-git@1.0.0
+added 59 packages from 48 contributors and audited 6951 packages in 9.134s
+found 3 vulnerabilities (2 low, 1 moderate)
+  run &#96;npm audit fix&#96; to fix them, or &#96;npm audit&#96; for details<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+</blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo d -g
+INFO  Start processing
+INFO  Files loaded in 167 ms
+INFO  0 files generated in 197 ms
+INFO  Deploying: git
+INFO  Setting up Git deployment...
+Initialized empty Git repository in &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;blog&#x2F;.deploy_git&#x2F;.git&#x2F;
+[master (root-commit) b2fe8d4] First commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 placeholder
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+INFO  Copying files from extend dirs...
+[master 440b5de] Site updated: 2019-04-19 12:24:02
+ 29 files changed, 5777 insertions(+)
+ create mode 100644 2019&#x2F;04&#x2F;19&#x2F;hello-world&#x2F;index.html
+ create mode 100644 archives&#x2F;2019&#x2F;04&#x2F;index.html
+ create mode 100644 archives&#x2F;2019&#x2F;index.html
+ create mode 100644 archives&#x2F;index.html
+ create mode 100644 css&#x2F;fonts&#x2F;FontAwesome.otf
+ create mode 100644 css&#x2F;fonts&#x2F;fontawesome-webfont.eot
+ create mode 100644 css&#x2F;fonts&#x2F;fontawesome-webfont.svg
+ create mode 100644 css&#x2F;fonts&#x2F;fontawesome-webfont.ttf
+ create mode 100644 css&#x2F;fonts&#x2F;fontawesome-webfont.woff
+ create mode 100644 css&#x2F;images&#x2F;banner.jpg
+ create mode 100644 css&#x2F;style.css
+ create mode 100644 fancybox&#x2F;blank.gif
+ create mode 100644 fancybox&#x2F;fancybox_loading.gif
+ create mode 100644 fancybox&#x2F;fancybox_loading@2x.gif
+ create mode 100644 fancybox&#x2F;fancybox_overlay.png
+ create mode 100644 fancybox&#x2F;fancybox_sprite.png
+ create mode 100644 fancybox&#x2F;fancybox_sprite@2x.png
+ create mode 100644 fancybox&#x2F;helpers&#x2F;fancybox_buttons.png
+ create mode 100644 fancybox&#x2F;helpers&#x2F;jquery.fancybox-buttons.css
+ create mode 100644 fancybox&#x2F;helpers&#x2F;jquery.fancybox-buttons.js
+ create mode 100644 fancybox&#x2F;helpers&#x2F;jquery.fancybox-media.js
+ create mode 100644 fancybox&#x2F;helpers&#x2F;jquery.fancybox-thumbs.css
+ create mode 100644 fancybox&#x2F;helpers&#x2F;jquery.fancybox-thumbs.js
+ create mode 100644 fancybox&#x2F;jquery.fancybox.css
+ create mode 100644 fancybox&#x2F;jquery.fancybox.js
+ create mode 100644 fancybox&#x2F;jquery.fancybox.pack.js
+ create mode 100644 index.html
+ create mode 100644 js&#x2F;script.js
+ delete mode 100644 placeholder
+warning: redirecting to https:&#x2F;&#x2F;github.com&#x2F;t0239184&#x2F;alan.github.io.git&#x2F;
+Enumerating objects: 46, done.
+Counting objects: 100% (46&#x2F;46), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (36&#x2F;36), done.
+Writing objects: 100% (46&#x2F;46), 507.66 KiB | 8.60 MiB&#x2F;s, done.
+Total 46 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3&#x2F;3), done.
+To http:&#x2F;&#x2F;github.com&#x2F;t0239184&#x2F;alan.github.io.git
+ * [new branch]      HEAD -&gt; master
+Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;http:&#x2F;&#x2F;github.com&#x2F;t0239184&#x2F;alan.github.io.git&#39;.
+INFO  Deploy done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Theme-Setting"><a href="#Theme-Setting" class="headerlink" title="Theme Setting"></a>Theme Setting</h2><p>Hexo已經有集合了很多人建立好的Theme，可以去他們的網站裡面挑選一個自己喜歡的版型。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo主題 - https://hexo.io/themes/</a></p>
+</blockquote>
+<p>我們這次使用 NexT 這個主題，所以我們先從 Github 下載主題到 themes 資料夾中，然後之後再稍作修改成自己想要的樣式。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">NexT使用文件 - http://theme-next.iissnan.com/</a></p>
+</blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim _config.yml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># _config.yml</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然後更多的設定就需要到 /blog/themes/next/_config.yml下面去設定了，<br>那麼接下來就要進去將一些頁面顯示的東西打開，例如分類、標籤、關於我、所有文章等等</p>
+<pre class="line-numbers language-none"><code class="language-none">$ vim themes&#x2F;next&#x2F;_config.yml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># themes/next/_config.yml</span>
+<span class="token comment"># 關於Menu Mapping設定</span>
+<span class="token key atrule">menu</span><span class="token punctuation">:</span>
+  <span class="token key atrule">home</span><span class="token punctuation">:</span> / <span class="token punctuation">|</span><span class="token punctuation">|</span> home
+  <span class="token key atrule">about</span><span class="token punctuation">:</span> /about/ <span class="token punctuation">|</span><span class="token punctuation">|</span> user
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> /tags/ <span class="token punctuation">|</span><span class="token punctuation">|</span> tags
+  <span class="token key atrule">categories</span><span class="token punctuation">:</span> /categories/ <span class="token punctuation">|</span><span class="token punctuation">|</span> th
+  <span class="token key atrule">archives</span><span class="token punctuation">:</span> /archives/ <span class="token punctuation">|</span><span class="token punctuation">|</span> archive
+  <span class="token comment">#schedule: /schedule/ || calendar</span>
+  <span class="token comment">#sitemap: /sitemap.xml || sitemap</span>
+  <span class="token comment">#commonweal: /404/ || heartbeat</span>
+
+<span class="token punctuation">...</span>
+<span class="token punctuation">...</span>
+  
+<span class="token comment"># 關於側邊欄的位置設定以及顯示方式</span>
+<span class="token key atrule">sidebar</span><span class="token punctuation">:</span>
+  <span class="token comment"># Sidebar Position, available value: left | right (only for Pisces | Gemini).</span>
+  <span class="token key atrule">position</span><span class="token punctuation">:</span> left
+  <span class="token comment">#position: right</span>
+
+  <span class="token comment"># Sidebar Display, available value (only for Muse | Mist):</span>
+  <span class="token comment">#  - post    expand on posts automatically. Default.</span>
+  <span class="token comment">#  - always  expand for all pages automatically</span>
+  <span class="token comment">#  - hide    expand only when click on the sidebar toggle icon.</span>
+  <span class="token comment">#  - remove  Totally remove sidebar including sidebar toggle.</span>
+  <span class="token comment">#display: post</span>
+  <span class="token key atrule">display</span><span class="token punctuation">:</span> always
+  <span class="token comment">#display: hide</span>
+  <span class="token comment">#display: remove</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Init-Categories"><a href="#Init-Categories" class="headerlink" title="Init Categories"></a>Init Categories</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo new page categories
+INFO  Created: ~&#x2F;Documents&#x2F;blog&#x2F;source&#x2F;categories&#x2F;index.md<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> categories
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2019-04-19 14:40:37</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"categories"</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Init-Tag"><a href="#Init-Tag" class="headerlink" title="Init Tag"></a>Init Tag</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo new page tags
+INFO  Created: ~&#x2F;Documents&#x2F;blog&#x2F;source&#x2F;tags&#x2F;index.md<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> tags
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2019-04-19 15:00:41</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"tags"</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Init-About"><a href="#Init-About" class="headerlink" title="Init About"></a>Init About</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo new page about
+INFO  Created: ~&#x2F;Documents&#x2F;blog&#x2F;source&#x2F;about&#x2F;index.md<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="New-article"><a href="#New-article" class="headerlink" title="New article"></a>New article</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo new githib_and_hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim sources&#x2F;_post&#x2F;github_and_hexo.md<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Add-Categories-and-Tags"><a href="#Add-Categories-and-Tags" class="headerlink" title="Add Categories and Tags"></a>Add Categories and Tags</h2><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Github &amp; Hexo
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2019-04-19 14:47:41</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> FrontEnd
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> Git
+<span class="token punctuation">-</span> Github
+<span class="token punctuation">-</span> GitPage
+<span class="token punctuation">-</span> Linux
+<span class="token punctuation">-</span> NPM
+<span class="token punctuation">-</span> Hexo</span>
+<span class="token punctuation">---</span></span>
+
+...
+
+<span class="token comment">&lt;!--post context--></span>
+...
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Remove-article"><a href="#Remove-article" class="headerlink" title="Remove article"></a>Remove article</h2><p>只要從本機移除.md檔就可以了</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ rm -rf blog&#x2F;sources&#x2F;_post&#x2F;xxxxx.md
+$ hexo d -g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="顯示摘要，隱藏本文"><a href="#顯示摘要，隱藏本文" class="headerlink" title="顯示摘要，隱藏本文"></a>顯示摘要，隱藏本文</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- more --></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>這個之下的文章就會被折疊起來，這樣主頁面上就會更整潔一些。</p>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Linux/" class="button small">Linux</a> <a href="/tags/Git/" class="button small">Git</a> <a href="/tags/Github/" class="button small">Github</a> <a href="/tags/GitPage/" class="button small">GitPage</a> <a href="/tags/NPM/" class="button small">NPM</a> <a href="/tags/Hexo/" class="button small">Hexo</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+                
+                
+                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
+                
+                
+                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
+                
+                
+                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
+                
+                
+                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
+                
+                
+                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- skel -->
+
+<script src="/js/skel.min.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/util.js"></script>
+
+
+<!--[if lte IE 8]>
+
+<script src="/js/ie/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

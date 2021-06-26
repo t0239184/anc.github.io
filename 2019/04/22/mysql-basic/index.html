@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Record my idea and technical note space.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Alan Chen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Mysql config &amp; basic syntax"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="ANCS"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>Mysql config &amp; basic syntax - ANCS</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/sass/main.css">
+
+
+    <!--[if lt IE 8]>
+        
+<script src="/js/ie/html5shiv.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        
+<link rel="stylesheet" href="/sass/ie8.css">
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        
+<link rel="stylesheet" href="/sass/ie9.css">
+
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Techical</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Life</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Idea</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>Mysql config & basic syntax</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>這篇主要說明MySQL基本安裝設定及常用的語法</p>
+<span id="more"></span>
+<h3 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ brew <span class="token function">install</span> mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Init-MySQL"><a href="#Init-MySQL" class="headerlink" title="Init MySQL"></a>Init MySQL</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cd &#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;mysql&#x2F;8.0.15&#x2F;bin
+$ .&#x2F;mysql_secure_installation
+...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Start-MySQL"><a href="#Start-MySQL" class="headerlink" title="Start MySQL"></a>Start MySQL</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mysql.server start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<h3 id="Service-start"><a href="#Service-start" class="headerlink" title="Service start"></a>Service start</h3></blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># Mac
+$ brew services start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Shutdown-MySQL"><a href="#Shutdown-MySQL" class="headerlink" title="Shutdown MySQL"></a>Shutdown MySQL</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mysql.server stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<h3 id="Service-shutdown"><a href="#Service-shutdown" class="headerlink" title="Service shutdown"></a>Service shutdown</h3></blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># Mac
+$ brew services stop mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>關於Service的部分，可以再去翻閱Mac及Linux相關文章</p>
+<p><a href="https://t0239184.github.io/alan.github.io/2019/04/22/brew-service/">[Mac] Brew Service</a></p>
+<h3 id="Login-local-MySQL"><a href="#Login-local-MySQL" class="headerlink" title="Login local MySQL"></a>Login local MySQL</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mysql -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<h3 id="Login-remote-MySQL"><a href="#Login-remote-MySQL" class="headerlink" title="Login remote MySQL"></a>Login remote MySQL</h3></blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ mysql -u userName -p -h 192.168.0.1 -P 3306<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Query-Databases"><a href="#Query-Databases" class="headerlink" title="Query Databases"></a>Query Databases</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> sys                <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.02</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Create-Database"><a href="#Create-Database" class="headerlink" title="Create Database"></a>Create Database</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">database</span> anc<span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span>
+    
+mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> anc                <span class="token operator">|</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> sys                <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token number">5</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Enter-Datebase"><a href="#Enter-Datebase" class="headerlink" title="Enter Datebase"></a>Enter Datebase</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">use</span> anc<span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Create-User"><a href="#Create-User" class="headerlink" title="Create User"></a>Create User</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">user</span> <span class="token string">'alan'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'********'</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<blockquote>
+<p style="color : #F00"> 
+ERROR 1819 (HY000): You password does not satisfy the current policy requirements
+</blockquote>
+</p>
+
+<p style="color:#090">cause: this is password too simple
+
+<h3 id="Query-password-validate-policy"><a href="#Query-password-validate-policy" class="headerlink" title="Query password validate policy"></a>Query password validate policy</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'validate_password%'</span><span class="token punctuation">;</span>
+    
+<span class="token operator">+</span><span class="token comment">--------------------------------------+--------+</span>
+<span class="token operator">|</span> Variable_name                        <span class="token operator">|</span> <span class="token keyword">Value</span>  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------------------------+--------+</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>check_user_name    <span class="token operator">|</span> <span class="token keyword">ON</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>dictionary_file    <span class="token operator">|</span>        <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>length             <span class="token operator">|</span> <span class="token number">8</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>mixed_case_count   <span class="token operator">|</span> <span class="token number">1</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>number_count       <span class="token operator">|</span> <span class="token number">1</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>policy             <span class="token operator">|</span> MEDIUM <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password<span class="token punctuation">.</span>special_char_count <span class="token operator">|</span> <span class="token number">1</span>      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------------------------+--------+</span>
+<span class="token number">7</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.02</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>MySQL密碼驗證原則對照表：</p>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th align="left">Value</th>
+<th>Test Performed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td align="left">Low</td>
+<td>length;</td>
+</tr>
+<tr>
+<td>1</td>
+<td align="left">MEDIUM</td>
+<td>length; numeric, lowercase/uppercase, and special characters</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">STRONG</td>
+<td>length; numeric, lowercase/uppercase, and special characters dictionary file</td>
+</tr>
+</tbody></table>
+<p>Login <code>root</code><br>Query validate role</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">select</span> @<span class="token variable">@validate_password_length</span><span class="token punctuation">;</span>    
+mysql<span class="token operator">></span> <span class="token keyword">select</span> @<span class="token variable">@validate_password_policy</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Setting validate role</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">set</span> <span class="token keyword">global</span> validate_password_length<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>
+mysql<span class="token operator">></span> <span class="token keyword">set</span> <span class="token keyword">global</span> validate_password_policy<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>validate_password_dictionary_file</td>
+<td>插件用於驗証密碼強度的字典文件路徑。</td>
+</tr>
+<tr>
+<td>validate_password_length</td>
+<td>密碼最小長度，參數默認為8，它有最小值的限制，最小值為：validate_password_number_count + validate_password_special_char_count + (2 * validate_password_mixed_case_count)</td>
+</tr>
+<tr>
+<td>validate_password_mixed_case_count</td>
+<td>密碼至少要包含的小寫字母個數和大寫字母個數。</td>
+</tr>
+<tr>
+<td>validate_password_number_count</td>
+<td>密碼至少要包含的數字個數。</td>
+</tr>
+<tr>
+<td>validate_password_policy</td>
+<td>密碼驗証原則等級。</td>
+</tr>
+</tbody></table>
+<h3 id="Add-Grant-to-new-User"><a href="#Add-Grant-to-new-User" class="headerlink" title="Add Grant to new User"></a>Add Grant to new User</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">grant</span> <span class="token keyword">all</span> <span class="token keyword">privileges</span> <span class="token keyword">on</span> anc<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">to</span> <span class="token string">'alan'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span> 
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span>
+    
+mysql<span class="token operator">></span> <span class="token keyword">exit</span>
+Bye<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Login-new-User"><a href="#Login-new-User" class="headerlink" title="Login new User"></a>Login new User</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mysql -u alan -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<h3 id="Show-Tables"><a href="#Show-Tables" class="headerlink" title="Show Tables"></a>Show Tables</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> Tables_in_anc      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> hibernate_sequence <span class="token operator">|</span>
+<span class="token operator">|</span> role               <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">user</span>               <span class="token operator">|</span>
+<span class="token operator">|</span> user_role          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token punctuation">`</span><span class="token punctuation">`</span><span class="token punctuation">`</span>    
+<span class="token punctuation">`</span><span class="token punctuation">`</span><span class="token punctuation">`</span> <span class="token keyword">sql</span>
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token keyword">user</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+-----------+------------+---------+-----------+</span>
+<span class="token operator">|</span> pk_user_id <span class="token operator">|</span> active <span class="token operator">|</span> email     <span class="token operator">|</span> password   <span class="token operator">|</span> user_id <span class="token operator">|</span> user_name <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+-----------+------------+---------+-----------+</span>
+<span class="token operator">|</span>          <span class="token number">1</span> <span class="token operator">|</span> Y      <span class="token operator">|</span> alan<span class="token variable">@alan</span> <span class="token operator">|</span> <span class="token operator">-</span><span class="token number">921600614</span> <span class="token operator">|</span> Alan    <span class="token operator">|</span> Alan      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+-----------+------------+---------+-----------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/MySQL/" class="button small">MySQL</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+                
+                
+                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
+                
+                
+                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
+                
+                
+                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
+                
+                
+                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
+                
+                
+                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- skel -->
+
+<script src="/js/skel.min.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/util.js"></script>
+
+
+<!--[if lte IE 8]>
+
+<script src="/js/ie/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

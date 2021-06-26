@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Record my idea and technical note space.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Alan Chen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Dockerfile"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="ANCS"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>Dockerfile - ANCS</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/sass/main.css">
+
+
+    <!--[if lt IE 8]>
+        
+<script src="/js/ie/html5shiv.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        
+<link rel="stylesheet" href="/sass/ie8.css">
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        
+<link rel="stylesheet" href="/sass/ie9.css">
+
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Techical</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Life</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Idea</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>Dockerfile</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>Dockerfile 主要是來描述Image內部構造的文件，使用一個基本的Image然後再疊加上客製化的設定，最後就可以透過Build指令來建立一個屬於你的Image了，下面以架設Tomcat為範例</p>
+<span id="more"></span>
+
+<h2 id="Dockerfile-Param"><a href="#Dockerfile-Param" class="headerlink" title="Dockerfile Param"></a>Dockerfile Param</h2><table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FROM</td>
+<td>每一個Dockerfile都會基於一個Image上再添加個人所需的套件 ex: MySQLImage = CentOS + MySQL + Java</td>
+</tr>
+<tr>
+<td>MAINTAINER</td>
+<td>作者或維護者</td>
+</tr>
+<tr>
+<td>ENV</td>
+<td>Linux的環境變數 ex: export CATALINA_HOME=/usr/local….</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>複製文件且自動解壓縮</td>
+</tr>
+<tr>
+<td>COPY</td>
+<td>複製Host端的檔案</td>
+</tr>
+<tr>
+<td>EXPOSE</td>
+<td>預設容器暴露的Port</td>
+</tr>
+<tr>
+<td>WORKDIR</td>
+<td>以上執行完後切換的工作路徑</td>
+</tr>
+<tr>
+<td>RUN</td>
+<td>執行Linux命令，多半為安裝軟體，建議RUN指令越少越好，避免虛擬圖層過多影響效能，這個操作最後會永久保存於容器之中</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>執行<code>docker run</code>之後執行的命令</td>
+</tr>
+<tr>
+<td>ENTRYPOINT</td>
+<td>容器啟動後執行的命令</td>
+</tr>
+</tbody></table>
+<h2 id="Download-Java-amp-Tomcat"><a href="#Download-Java-amp-Tomcat" class="headerlink" title="Download Java &amp; Tomcat"></a>Download Java &amp; Tomcat</h2><p>建立一個臨時資料夾供後續處理</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ mkdir docker-temp &amp;&amp; cd docker-temp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ wget --no-check-certificate -c --header &quot;Cookie: oraclelicense&#x3D;accept-securebackup-cookie&quot; http:&#x2F;&#x2F;download.oracle.com&#x2F;otn-pub&#x2F;java&#x2F;jdk&#x2F;11.0.2+9&#x2F;f51449fcd52f4d52b93a989c5c56ed3c&#x2F;jdk-11.0.2_linux-x64_bin.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><p>增加權限規則以及使用者</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ wget http:&#x2F;&#x2F;apache.stu.edu.tw&#x2F;tomcat&#x2F;tomcat-9&#x2F;v9.0.17&#x2F;src&#x2F;apache-tomcat-8.5.40.tar.gz
+
+$ tar -zxvf apache-tomcat-8.5.40.tar.gz
+$ vim apache-tomcat-8.5.40&#x2F;conf&#x2F;tomcat_users.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!-- tomcat_users.xml --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tomcat-users</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://tomcat.apache.org/xml<span class="token punctuation">"</span></span>
+              <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+              <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://tomcat.apache.org/xml tomcat-users.xsd<span class="token punctuation">"</span></span>
+              <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+              
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manager-gui<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manager-script<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manager-jmx<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manager-status<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin-gui<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1qaz2wsx<span class="token punctuation">"</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin-gui,manager-gui,manager-script,manager-jmx,manager-status<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin<span class="token punctuation">"</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1qaz2wsx<span class="token punctuation">"</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin-gui,manager-gui,manager-script,manager-jmx,manager-status<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tomcat-users</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接下來要做的處理是Tomcat於Manager和HostManager兩個頁面都有做訪問IP的權限管控，所以要去修改這兩個頁面的設定檔</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim &#x2F;apache-tomcat-8.5.40&#x2F;webapps&#x2F;manager&#x2F;META-INF&#x2F;context.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!-- context.xml --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span> <span class="token attr-name">antiResourceLocking</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">privileged</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 原先只能允許LocalHost訪問，可以選擇增加可訪問IP或者註解掉 --></span>
+<span class="token comment">&lt;!--
+  &lt;Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Manager</span> <span class="token attr-name">sessionAttributeValueClassNameFilter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Context</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ vim &#x2F;apache-tomcat-8.5.40&#x2F;webapps&#x2F;manager&#x2F;META-INF&#x2F;context.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!-- context.xml --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span> <span class="token attr-name">antiResourceLocking</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">privileged</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 原先只能允許LocalHost訪問，可以選擇增加可訪問IP或者註解掉 --></span>
+<span class="token comment">&lt;!--
+  &lt;Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Manager</span> <span class="token attr-name">sessionAttributeValueClassNameFilter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Context</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重新壓縮成tar.gz</p>
+<pre class="line-numbers language-none"><code class="language-none">$ tar -czvf apache-tomcat-8.5.40.tar.gz apache-tomcat-8.5.40&#x2F; <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="Make-Tomcat-Image"><a href="#Make-Tomcat-Image" class="headerlink" title="Make Tomcat-Image"></a>Make Tomcat-Image</h2><p>製作CentOS環境的TomcatImage</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker"><span class="token keyword">FROM</span> centos<span class="token punctuation">:</span>latest
+
+<span class="token keyword">MAINTAINER</span> Alan &lt;t0239184ps@gmail.com<span class="token punctuation">></span>
+
+<span class="token keyword">ADD</span> jdk<span class="token punctuation">-</span>11.0.2_linux<span class="token punctuation">-</span>x64_bin.tar.gz /
+<span class="token keyword">ADD</span> apache<span class="token punctuation">-</span>tomcat<span class="token punctuation">-</span>8.5.40.tar.gz /
+
+<span class="token keyword">RUN</span> yum install vim <span class="token punctuation">-</span>y \
+&amp;&amp; rm <span class="token punctuation">-</span>rf jdk<span class="token punctuation">-</span>11.0.2_linux<span class="token punctuation">-</span>x64_bin.tar.gz apache<span class="token punctuation">-</span>tomcat<span class="token punctuation">-</span>8.5.40.tar.gz \
+&amp;&amp; chmod 777 /apache<span class="token punctuation">-</span>tomcat<span class="token punctuation">-</span>8.5.40/bin/*.sh
+
+<span class="token keyword">ENV</span> JAVA_HOME=/jdk<span class="token punctuation">-</span>11.0.2
+<span class="token keyword">ENV</span> PATH=$PATH<span class="token punctuation">:</span>$JAVA_HOME/bin
+<span class="token keyword">ENV</span> CATALINA_HOME=/apache<span class="token punctuation">-</span>tomcat<span class="token punctuation">-</span>8.5.40
+<span class="token keyword">ENV</span> CATALINA_BASE=/apache<span class="token punctuation">-</span>tomcat<span class="token punctuation">-</span>8.5.40
+<span class="token keyword">ENV</span> CLASSPATH=.<span class="token punctuation">:</span>$JAVA_HOME/jre/lib<span class="token punctuation">:</span>$JAVA_HOME/lib<span class="token punctuation">:</span>
+<span class="token keyword">ENV</span> PATH=$PATH<span class="token punctuation">:</span>$CATALINA_HOME/bin
+<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/apache-tomcat-8.5.40/bin/catalina.sh"</span><span class="token punctuation">,</span><span class="token string">"run"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>關於RUN這個指令，如果能一口氣完成就一口氣，如果使用了三個RUN那麼Docker就會建立三個虛擬圖層，那這樣就會大大的影響效能</p>
+</blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker build -t tomcat1 . --no-cache<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看是否有建立成功</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+tomcat1             latest              845f6210b40b        14 hours ago        656MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>啟動Tomcat</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker run -p 8080:8080 --name tomcat-1 -d --rm -v ~&#x2F;docker-data&#x2F;tomcat:&#x2F;apache-tomcat-8.5.40&#x2F;webapps tomcat1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>Dockerfile主要是在描述Image的，下一篇來講描述Container的Docker-compose。</p>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Docker/" class="button small">Docker</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+                
+                
+                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
+                
+                
+                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
+                
+                
+                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
+                
+                
+                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
+                
+                
+                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- skel -->
+
+<script src="/js/skel.min.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/util.js"></script>
+
+
+<!--[if lte IE 8]>
+
+<script src="/js/ie/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

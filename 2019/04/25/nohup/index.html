@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Record my idea and technical note space.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Alan Chen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="nohup"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="ANCS"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>nohup - ANCS</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/sass/main.css">
+
+
+    <!--[if lt IE 8]>
+        
+<script src="/js/ie/html5shiv.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        
+<link rel="stylesheet" href="/sass/ie8.css">
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        
+<link rel="stylesheet" href="/sass/ie9.css">
+
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Techical</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Life</a>
+            </li>
+        
+            <li>
+                <a href="/about.html">Idea</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>nohup</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<h2 id="nohup-指令-背景執行指令"><a href="#nohup-指令-背景執行指令" class="headerlink" title="nohup 指令 - 背景執行指令"></a>nohup 指令 - 背景執行指令</h2><p>於背景執行Linux命令直到完成後才會結束, 不會影響使用者的正常工作。</p>
+<blockquote>
+<p>nohup = “no hangup”</p>
+</blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ nohup your-command &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>nohup 預設會將指令的輸出放到 nohup.out 的檔案,如果需要自訂重新導向的檔案, 可以用下面方法重新導向到檔案</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ nohup your-domain &gt; nohup.log 2&gt;&amp;1 &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>這樣就會將指令的輸出放到 nohup.log 內。</p>
+<span id="more"></span>
+
+<hr>
+<h3 id="Run-process-on-backgrund"><a href="#Run-process-on-backgrund" class="headerlink" title="Run process on backgrund"></a>Run process on backgrund</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ nohup mvn spring-boot:run &amp;
+[1] 84534
+appending output to nohup.out
+$ jobs -l
+[1]  + 84534 running    nohup mvn spring-boot:run<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>$ nohup java -jar project.jar –server.port=port &amp;</p>
+</blockquote>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ ls
+.&#x2F;                    .gitignore            .mvn&#x2F;                 mvnw*                 nohup.out             springbootdocker.iml  target&#x2F;
+..&#x2F;                   .idea&#x2F;                HELP.md               mvnw.cmd              pom.xml               src&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="See-process-log"><a href="#See-process-log" class="headerlink" title="See process log"></a>See process log</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cat nohup.out
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------&lt; pri.anc:springbootdocker &gt;----------------------
+[INFO] Building springbootdocker 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] &gt;&gt;&gt; spring-boot-maven-plugin:2.1.3.RELEASE:run (default-cli) &gt; test-compile @ springbootdocker &gt;&gt;&gt;
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ springbootdocker ---
+[INFO] Using &#39;UTF-8&#39; encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ springbootdocker ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ springbootdocker ---
+[INFO] Using &#39;UTF-8&#39; encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;springbootdocker&#x2F;src&#x2F;test&#x2F;resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ springbootdocker ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] &lt;&lt;&lt; spring-boot-maven-plugin:2.1.3.RELEASE:run (default-cli) &lt; test-compile @ springbootdocker &lt;&lt;&lt;
+[INFO]
+[INFO]
+[INFO] --- spring-boot-maven-plugin:2.1.3.RELEASE:run (default-cli) @ springbootdocker ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ &#x2F;\\ &#x2F; ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | &#39;_ | &#39;_| | &#39;_ \&#x2F; _&#96; | \ \ \ \
+ \\&#x2F;  ___)| |_)| | | | | || (_| |  ) ) ) )
+  &#39;  |____| .__|_| |_|_| |_\__, | &#x2F; &#x2F; &#x2F; &#x2F;
+ &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;|_|&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;|___&#x2F;&#x3D;&#x2F;_&#x2F;_&#x2F;_&#x2F;
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2019-03-31 02:59:17.996  INFO 84554 --- [  restartedMain] p.a.s.SpringbootdockerApplication        : Starting SpringbootdockerApplication on smartcaredeMacBook-Air.local with PID 84554 (&#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;springbootdocker&#x2F;target&#x2F;classes started by alan in &#x2F;Users&#x2F;alan&#x2F;Documents&#x2F;springbootdocker)
+2019-03-31 02:59:18.004  INFO 84554 --- [  restartedMain] p.a.s.SpringbootdockerApplication        : No active profile set, falling back to default profiles: default
+2019-03-31 02:59:18.252  INFO 84554 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set &#39;spring.devtools.add-properties&#39; to &#39;false&#39; to disable
+2019-03-31 02:59:18.253  INFO 84554 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the &#39;logging.level.web&#39; property to &#39;DEBUG&#39;
+2019-03-31 02:59:22.233  INFO 84554 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean &#39;org.springframework.hateoas.config.HateoasConfiguration&#39; of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$458abca2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-31 02:59:24.009  INFO 84554 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-31 02:59:24.158  INFO 84554 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-31 02:59:24.161  INFO 84554 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat&#x2F;9.0.16]
+2019-03-31 02:59:24.205  INFO 84554 --- [  restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [&#x2F;Users&#x2F;alan&#x2F;Library&#x2F;Java&#x2F;Extensions:&#x2F;Library&#x2F;Java&#x2F;Extensions:&#x2F;Network&#x2F;Library&#x2F;Java&#x2F;Extensions:&#x2F;System&#x2F;Library&#x2F;Java&#x2F;Extensions:&#x2F;usr&#x2F;lib&#x2F;java:.]
+2019-03-31 02:59:24.648  INFO 84554 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[&#x2F;]       : Initializing Spring embedded WebApplicationContext
+2019-03-31 02:59:24.650  INFO 84554 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6396 ms
+2019-03-31 02:59:26.342  INFO 84554 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService &#39;applicationTaskExecutor&#39;
+2019-03-31 02:59:27.159  INFO 84554 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-31 02:59:27.376  INFO 84554 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path &#39;&#39;
+2019-03-31 02:59:27.389  INFO 84554 --- [  restartedMain] p.a.s.SpringbootdockerApplication        : Started SpringbootdockerApplication in 11.186 seconds (JVM running for 12.608)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Kill-background-process"><a href="#Kill-background-process" class="headerlink" title="Kill background process"></a>Kill background process</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ jobs -l
+[1]  + 84534 running    nohup mvn spring-boot:run
+$ kill -9 84534
+[1]  + 84534 killed     nohup mvn spring-boot:run
+$ jobs -l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Linux/" class="button small">Linux</a> <a href="/tags/nohup/" class="button small">nohup</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+                
+                
+                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
+                
+                
+                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
+                
+                
+                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
+                
+                
+                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
+                
+                
+                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
+                
+                
+                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- skel -->
+
+<script src="/js/skel.min.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/util.js"></script>
+
+
+<!--[if lte IE 8]>
+
+<script src="/js/ie/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

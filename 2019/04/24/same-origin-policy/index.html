@@ -20,6 +20,8 @@
 
     <!--Open Graph Title-->
     
+        <meta property="og:title" content="Same Origin Policy 同源政策"/>
+    
 
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="ANCS"/>
@@ -31,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2021 - ANCS</title>
+    <title>Same Origin Policy 同源政策 - ANCS</title>
 
     <!-- Custom CSS -->
     
@@ -128,123 +130,72 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1>Same Origin Policy 同源政策</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>有時透過AJAX取得資料時會發現有一個錯誤訊息 <code>XMLHttpRequest cannot load</code>，那下面就來說明這是什麼，什麼是Same Origin Policy 同源政策。</p>
+<span id="more"></span>
+
+<blockquote>
+<p>XMLHttpRequest cannot load<br><a target="_blank" rel="noopener" href="http://odata.tn.edu.tw/ebookapi/api/getOdataJH/?level=all">http://odata.tn.edu.tw/ebookapi/api/getOdataJH/?level=all</a>.<br>No ‘Access-Control-Allow-Origin’ header is present on the requested resource.<br>Origin ‘null’ is therefore not allowed access.</p>
+</blockquote>
+<p><span style="color:#060">瀏覽器因為安全性的考量因此有 Same Origin Policy 同源政策</span><br/><br><br/></p>
+<blockquote>
+<p><span style="color:#000">不同源 : 你的網站 != 呼叫API的網站</span></p>
+</blockquote>
+<p>Request有發送出去，實際上Browser也有收到Response，但Browser因為Same Origin Policy所以沒將Response傳送給JavaScript</p>
+<p>所以關鍵點在於Browser把Response阻擋下來了，因此沒有使用Browser就沒這個問題，那麼如果是使用Browser的話應該要怎麼辦？</p>
+<h2 id="CORS-跨來源HTTP請求"><a href="#CORS-跨來源HTTP請求" class="headerlink" title="CORS 跨來源HTTP請求"></a>CORS 跨來源HTTP請求</h2><blockquote>
+<p>CORS = Cross-Origin HTTP request</p>
+</blockquote>
+<h3 id="開啟跨來源-HTTP-請求"><a href="#開啟跨來源-HTTP-請求" class="headerlink" title="開啟跨來源 HTTP 請求"></a>開啟跨來源 HTTP 請求</h3><p>Server 必須在 Response 的 Header 裡面加上<code>Access-Control-Allow-Origin</code></p>
+<h3 id="Response流程"><a href="#Response流程" class="headerlink" title="Response流程"></a>Response流程</h3><p><code>Response</code> -&gt; <code>Browser</code> -&gt;  <code> Check &quot;Access-Control-Allow-Origin&quot;</code></p>
+<p>如果裡面有包含現在這個發起 Request 的 Origin 的話，Browser就會允許通過，讓程式順利接收到 Response</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Response Header:</span>
+Content-Type: application/json
+Content-Length: <span class="token number">71</span>
+Connection: keep-alive
+Server: nginx
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, no-store, must-revalidate, private
+Expires: <span class="token number">0</span>
+Pragma: no-cache
+Twitch-Trace-Id: e316ddcf2fa38a659fa95af9012c9358
+X-Ctxlog-Logid: <span class="token number">1</span>-5920052c-446a91950e3abed21a360bd5
+Timing-Allow-Origin: https://www.twitch.tv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>參考來源<br><a target="_blank" rel="noopener" href="http://huli.logdown.com/posts/2223581-ajax-and-cors">http://huli.logdown.com/posts/2223581-ajax-and-cors</a></p>
+</blockquote>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Browser/" class="button small">Browser</a> <a href="/tags/Response/" class="button small">Response</a> <a href="/tags/Header/" class="button small">Header</a> <a href="/tags/Same-Origin-Policy/" class="button small">Same Origin Policy</a> <a href="/tags/Access-Control-Allow-Origin/" class="button small">Access-Control-Allow-Origin</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/24/ajax/">AJAX</a>
-</li>
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-        
-            <li>
-    <a href="/2019/04/22/brew-service/">Brew Service</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/27/compiler-run-java-in-sublime/">Compiler & Run Java in Sublime</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/22/docker-basic/">Docker Basic</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-file/">Dockerfile</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-volume/">Docker Volume</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/19/github-and-hexo/">Github & Hexo</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/28/hexo-deploy-error/">Hexo Deploy Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/homebrew-loaderror/">Homebrew Load Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/javascript-ajax-function/">JavaScript AJAX Function</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/20/mac-enviroment/">Mac Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/mysql-basic/">Mysql config & basic syntax</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/nohup/">nohup</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/react-note/">react-note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/same-origin-policy/">Same Origin Policy 同源政策</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/tomcat-enviroment/">Tomcat Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/vuejs/">Vue.js</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/hexo/hexo-init/">Hexo使用教學</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/regex/common-regex-pattern/">常用Regex Pattern</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/arch-linux-note/">Arch Linux Note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/21/springboot-start-option/">Springboot Start Option</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
@@ -344,7 +295,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

@@ -20,6 +20,8 @@
 
     <!--Open Graph Title-->
     
+        <meta property="og:title" content="Docker Volume"/>
+    
 
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="ANCS"/>
@@ -31,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2021 - ANCS</title>
+    <title>Docker Volume - ANCS</title>
 
     <!-- Custom CSS -->
     
@@ -128,123 +130,77 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1>Docker Volume</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>Volume 可以滿足需要互相交流檔案的需求或者留存資料用途，例如資料共享和資料庫檔案等</p>
+<pre class="line-numbers language-none"><code class="language-none">如下表，可以有兩種情境
+
+1. Host file         &lt;-- Volume --&gt;  Container file
+2. Container-A file  &lt;-- Volume --&gt;  Container-B file <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span id="more"></span>
+
+<p>Docker 提供三種掛載類型(mount types)：</p>
+<table>
+<thead>
+<tr>
+<th>Mount Type</th>
+<th>Descript</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Bind mount</td>
+<td>Mount exist host filesystem</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>Mount volume instance</td>
+</tr>
+<tr>
+<td>Tmpfs mount</td>
+<td>Mount from memory</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>建議增加Volume，Container必須移除重新生成會比較好</p>
+</blockquote>
+<h3 id="1-bind-mount"><a href="#1-bind-mount" class="headerlink" title="1.bind mount"></a>1.bind mount</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># -v(--volume) [host-path]:[container-path] 
+
+$ docker run -d -p 8080:8080 --name tomcat1 -v ~&#x2F;docker-data&#x2F;tomcat&#x2F;conf:&#x2F;tomcat&#x2F;conf tomcat:8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-volume-Instance"><a href="#2-volume-Instance" class="headerlink" title="2.volume Instance"></a>2.volume Instance</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ docker volume create myWar
+$ docker run -d -p 8080:8080 --name tomcat1 -v myWar:&#x2F;tomcat&#x2F;webapps tomcat:8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="3-tmpfs-mount"><a href="#3-tmpfs-mount" class="headerlink" title="3. tmpfs mount"></a>3. tmpfs mount</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">(empty)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Docker/" class="button small">Docker</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/24/ajax/">AJAX</a>
-</li>
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-        
-            <li>
-    <a href="/2019/04/22/brew-service/">Brew Service</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/27/compiler-run-java-in-sublime/">Compiler & Run Java in Sublime</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/22/docker-basic/">Docker Basic</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-file/">Dockerfile</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-volume/">Docker Volume</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/19/github-and-hexo/">Github & Hexo</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/28/hexo-deploy-error/">Hexo Deploy Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/homebrew-loaderror/">Homebrew Load Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/javascript-ajax-function/">JavaScript AJAX Function</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/20/mac-enviroment/">Mac Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/mysql-basic/">Mysql config & basic syntax</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/nohup/">nohup</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/react-note/">react-note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/same-origin-policy/">Same Origin Policy 同源政策</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/tomcat-enviroment/">Tomcat Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/vuejs/">Vue.js</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/hexo/hexo-init/">Hexo使用教學</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/regex/common-regex-pattern/">常用Regex Pattern</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/arch-linux-note/">Arch Linux Note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/21/springboot-start-option/">Springboot Start Option</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
@@ -344,7 +300,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

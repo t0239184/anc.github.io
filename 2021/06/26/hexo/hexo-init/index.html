@@ -20,6 +20,8 @@
 
     <!--Open Graph Title-->
     
+        <meta property="og:title" content="Hexo使用教學"/>
+    
 
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="ANCS"/>
@@ -31,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2021 - ANCS</title>
+    <title>Hexo使用教學 - ANCS</title>
 
     <!-- Custom CSS -->
     
@@ -128,123 +130,67 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1>Hexo使用教學</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有段時間沒用Hexo, 忘記如何啟動, 如何Deploy<br>而當時的對於前端技術也不太熟悉, 有很多東西都是照著步驟做的<br>但現在對於前端熟悉了, 重新看了Hexo的官網, 才漸漸回憶起來<br>所以先寫起來, 以後可以參照</p>
+<h2 id="安裝相關依賴"><a href="#安裝相關依賴" class="headerlink" title="安裝相關依賴"></a>安裝相關依賴</h2><p>將blog從git上Clone下來後先將相關依賴裝回來</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="下載hexo-cli"><a href="#下載hexo-cli" class="headerlink" title="下載hexo-cli"></a>下載hexo-cli</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hex-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Hexo的基本操作"><a href="#Hexo的基本操作" class="headerlink" title="Hexo的基本操作"></a>Hexo的基本操作</h2><p>然後可以用以下幾個指令進行操作</p>
+<ul>
+<li><code>hexo clean</code></li>
+<li><code>hexo generate</code></li>
+<li><code>hexo server</code></li>
+<li><code>hexo deploy</code></li>
+</ul>
+<h2 id="NPM已經封裝好的指令"><a href="#NPM已經封裝好的指令" class="headerlink" title="NPM已經封裝好的指令"></a>NPM已經封裝好的指令</h2><p>但現在在package.json中已經將上面這些操作封裝起來了<br>所以可以使用以下指令</p>
+<ul>
+<li><code>npm run build</code></li>
+<li><code>npm run server</code></li>
+<li><code>npm run deploy</code></li>
+</ul>
+<h2 id="更新和新增文章"><a href="#更新和新增文章" class="headerlink" title="更新和新增文章"></a>更新和新增文章</h2><p>於<code>/source/_posts/</code>中增加新的markdown文件<br>記得於文件中加上Header, 這樣才會有文件相關資訊</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Hexo使用教學
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2021-06-26 20:19:10</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> FrontEnd
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> Hexo</span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/Hexo/" class="button small">Hexo</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/24/ajax/">AJAX</a>
-</li>
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-        
-            <li>
-    <a href="/2019/04/22/brew-service/">Brew Service</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/27/compiler-run-java-in-sublime/">Compiler & Run Java in Sublime</a>
-</li>
 
-        
-            <li>
-    <a href="/2019/04/22/docker-basic/">Docker Basic</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-file/">Dockerfile</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/docker-volume/">Docker Volume</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/19/github-and-hexo/">Github & Hexo</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/28/hexo-deploy-error/">Hexo Deploy Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/homebrew-loaderror/">Homebrew Load Error</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/javascript-ajax-function/">JavaScript AJAX Function</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/20/mac-enviroment/">Mac Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/22/mysql-basic/">Mysql config & basic syntax</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/nohup/">nohup</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/react-note/">react-note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/same-origin-policy/">Same Origin Policy 同源政策</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/25/tomcat-enviroment/">Tomcat Enviroment</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/24/vuejs/">Vue.js</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/hexo/hexo-init/">Hexo使用教學</a>
-</li>
-
-        
-            <li>
-    <a href="/2021/06/26/regex/common-regex-pattern/">常用Regex Pattern</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/23/arch-linux-note/">Arch Linux Note</a>
-</li>
-
-        
-            <li>
-    <a href="/2019/04/21/springboot-start-option/">Springboot Start Option</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
@@ -344,7 +290,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
