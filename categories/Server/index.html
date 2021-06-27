@@ -1,236 +1,776 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--Description-->
-    
-        <meta name="description" content="Record my idea and technical note space.">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="Alan Chen">
-    
-
-    <!--Open Graph Title-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="ANCS"/>
-
-    <!--Page Cover-->
-    
-        <meta property="og:image" content=""/>
-    
-
-    <!-- Title -->
-    
-    <title>Server - ANCS</title>
-
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/sass/main.css">
+  <meta charset="utf-8">
+  <title>ANCS</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="ANCS">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Record my idea and technical note space.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ANCS">
+<meta property="og:url" content="http://t0239184.github.io/tags/index.html">
+<meta property="og:site_name" content="ANCS">
+<meta property="og:description" content="Record my idea and technical note space.">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-06-27T06:08:33.186Z">
+<meta property="article:modified_time" content="2021-06-27T06:08:33.186Z">
+<meta property="article:author" content="Alan Chen">
+<meta property="article:tag" content="Technical">
+<meta name="twitter:card" content="summary">
 
 
-    <!--[if lt IE 8]>
-        
-<script src="/js/ie/html5shiv.js"></script>
+<link rel="icon" href="/img/avatar.jpg">
 
-    <![endif]-->
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-    <!--[if lt IE 8]>
-        
-<link rel="stylesheet" href="/sass/ie8.css">
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
 
-    <![endif]-->
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-        
-<link rel="stylesheet" href="/sass/ie9.css">
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
 
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
-
-
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Menu -->
-        <!-- Header -->
-<header id="header">
-    <div class="inner">
-
-        <!-- Logo -->
-        <a href="/" class="logo">
-            <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">ANCS</span>
-        </a>
-
-        <!-- Nav -->
-        <nav>
-            <ul>
-                <li><a href="#menu">Menu</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
-
-<!-- Menu -->
-<nav id="menu">
-    <h2>Menu</h2>
-    <ul>
-        
-            <li>
-                <a href="/">Home</a>
-            </li>
-        
-            <li>
-                <a href="/archives">Archives</a>
-            </li>
-        
-    </ul>
-</nav>
-
-
-        <div id="main">
-            <div class="inner">
-
-                <!-- Main Content -->
-                
-
-<section class="archives">
-    
-        <div class="archive-title">Server</div>
-    
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2019/04/23/nginx/">Nginx</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
-
-
-
-            </div>
-        </div>
-
-        <!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <section>
-            <h2>About</h2>
-            <div>
-                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
-            </div>
-        </section>
-        <section>
-            <h2>Follow</h2>
-            <ul class="icons">
-                
-                    <li><a href="https://twitter.com/?lang=en" class="icon style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
-                
-                
-                    <li><a href="https://www.facebook.com/" class="icon style2 fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
-                
-                
-                    <li><a href="https://www.instagram.com/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
-                
-                
-                    <li><a href="https://dribbble.com/" class="icon style2 fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
-                
-                
-                    <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
-                
-                
-                    <li><a href="https://plus.google.com/" class="icon style2 fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
-                
-                
-                    <li><a href="https://www.behance.net/" class="icon style2 fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
-                
-                
-                    <li><a href="https://500px.com/" class="icon style2 fa-500px" target="_blank" ><span class="label">500px</span></a></li>
-                
-                
-                    <li><a href="\#" class="icon style2 fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
-                
-                
-                    <li><a href="\#" class="icon style2 fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
-                
-            </ul>
-        </section>
-        <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
-        </ul>
-    </div>
-</footer>
-    </div>
-
-    <!-- After footer scripts -->
-    
-<!-- jQuery -->
-
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- skel -->
-
-<script src="/js/skel.min.js"></script>
-
-
-<!-- Custom Code -->
-
-<script src="/js/util.js"></script>
-
-
-<!--[if lte IE 8]>
-
-<script src="/js/ie/respond.min.js"></script>
-
-<![endif]-->
-
-<!-- Custom Code -->
-
-<script src="/js/main.js"></script>
-
-
-<!-- Gallery -->
-<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Disqus Comments -->
-
-<script type="text/javascript">
-    var disqus_shortname = 'klugjo';
-
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
 </script>
 
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav mobile">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Alan Chen</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/t0239184"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(21)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="BackEnd">
+                        
+                        BackEnd
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Database">
+                        
+                        Database
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="FrontEnd">
+                        
+                        FrontEnd
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Node">
+                        
+                        Node
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Regex">
+                        
+                        Regex
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Server">
+                        
+                        Server
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Unix like">
+                        
+                        Unix like
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Unix Like">
+                        
+                        Unix Like
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Unix-like">
+                        
+                        Unix-like
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="21">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="Searchshortcut:i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="Structureshortcut:w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="Case Sensitive"></i>
+            <i class="iconfont icon-tag" data-title="Tag"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">Structure</div>
+            <i class="iconfont icon-list" data-title="Switch to post list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Access-Control-Allow-Origin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AJAX</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Arch Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Browser</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Header</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HomeBrew</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JavaScript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MacOS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nohup</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Proxy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Regex</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Response</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Same Origin Policy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Server</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Service</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SpringBoot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sublime</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Tomcat</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Vue.js</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="All Node "
+           href="/2021/06/27/nodejs/how-to-choose-node-server-lib/"
+           data-tag="Node,Server"
+           data-author="" >
+            <span class="post-title" title="Nodejs架設Server方法差異">Nodejs架設Server方法差異</span>
+            <span class="post-date" title="2021-06-27 13:06:00">2021/06/27</span>
+        </a>
+        
+        <a  class="All Regex "
+           href="/2021/06/26/regex/common-regex-pattern/"
+           data-tag="Regex"
+           data-author="" >
+            <span class="post-title" title="常用Regex Pattern">常用Regex Pattern</span>
+            <span class="post-date" title="2021-06-26 20:48:48">2021/06/26</span>
+        </a>
+        
+        <a  class="All FrontEnd "
+           href="/2021/06/26/hexo/hexo-init/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo使用教學">Hexo使用教學</span>
+            <span class="post-date" title="2021-06-26 20:19:10">2021/06/26</span>
+        </a>
+        
+        <a  class="All BackEnd "
+           href="/2019/04/27/compiler-run-java-in-sublime/"
+           data-tag="Java,Sublime"
+           data-author="" >
+            <span class="post-title" title="Compiler &amp; Run Java in Sublime">Compiler &amp; Run Java in Sublime</span>
+            <span class="post-date" title="2019-04-27 23:22:53">2019/04/27</span>
+        </a>
+        
+        <a  class="All Unix like "
+           href="/2019/04/25/nohup/"
+           data-tag="Linux,nohup"
+           data-author="" >
+            <span class="post-title" title="nohup">nohup</span>
+            <span class="post-date" title="2019-04-25 16:46:01">2019/04/25</span>
+        </a>
+        
+        <a  class="All "
+           href="/2019/04/25/react-note/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="react-note">react-note</span>
+            <span class="post-date" title="2019-04-25 10:50:12">2019/04/25</span>
+        </a>
+        
+        <a  class="All BackEnd "
+           href="/2019/04/25/tomcat-enviroment/"
+           data-tag="Tomcat"
+           data-author="" >
+            <span class="post-title" title="Tomcat Enviroment">Tomcat Enviroment</span>
+            <span class="post-date" title="2019-04-25 02:11:46">2019/04/25</span>
+        </a>
+        
+        <a  class="All FrontEnd "
+           href="/2019/04/24/vuejs/"
+           data-tag="JavaScript,Vue.js"
+           data-author="" >
+            <span class="post-title" title="Vue.js">Vue.js</span>
+            <span class="post-date" title="2019-04-24 13:21:51">2019/04/24</span>
+        </a>
+        
+        <a  class="All FrontEnd "
+           href="/2019/04/24/same-origin-policy/"
+           data-tag="Browser,Response,Header,Same Origin Policy,Access-Control-Allow-Origin"
+           data-author="" >
+            <span class="post-title" title="Same Origin Policy 同源政策">Same Origin Policy 同源政策</span>
+            <span class="post-date" title="2019-04-24 13:13:05">2019/04/24</span>
+        </a>
+        
+        <a  class="All FrontEnd "
+           href="/2019/04/24/ajax/"
+           data-tag="JavaScript,AJAX"
+           data-author="" >
+            <span class="post-title" title="AJAX">AJAX</span>
+            <span class="post-date" title="2019-04-24 13:00:45">2019/04/24</span>
+        </a>
+        
+        <a  class="All FrontEnd "
+           href="/2019/04/24/javascript-ajax-function/"
+           data-tag="JavaScript,AJAX"
+           data-author="" >
+            <span class="post-title" title="JavaScript AJAX Function">JavaScript AJAX Function</span>
+            <span class="post-date" title="2019-04-24 12:42:44">2019/04/24</span>
+        </a>
+        
+        <a  class="All Server "
+           href="/2019/04/23/nginx/"
+           data-tag="Proxy,Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2019-04-23 16:48:50">2019/04/23</span>
+        </a>
+        
+        <a  class="All Unix like "
+           href="/2019/04/23/arch-linux-note/"
+           data-tag="Arch Linux"
+           data-author="" >
+            <span class="post-title" title="Arch Linux Note">Arch Linux Note</span>
+            <span class="post-date" title="2019-04-23 15:11:37">2019/04/23</span>
+        </a>
+        
+        <a  class="All Unix like "
+           href="/2019/04/23/homebrew-loaderror/"
+           data-tag="HomeBrew,MacOS"
+           data-author="" >
+            <span class="post-title" title="Homebrew Load Error">Homebrew Load Error</span>
+            <span class="post-date" title="2019-04-23 12:09:23">2019/04/23</span>
+        </a>
+        
+        <a  class="All Unix like "
+           href="/2019/04/22/brew-service/"
+           data-tag="Mac,HomeBrew,Service"
+           data-author="" >
+            <span class="post-title" title="Brew Service">Brew Service</span>
+            <span class="post-date" title="2019-04-22 12:08:58">2019/04/22</span>
+        </a>
+        
+        <a  class="All Unix like "
+           href="/2019/04/22/docker-file/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2019-04-22 11:29:28">2019/04/22</span>
+        </a>
+        
+        <a  class="All Unix like "
+           href="/2019/04/22/docker-volume/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Docker Volume">Docker Volume</span>
+            <span class="post-date" title="2019-04-22 11:16:26">2019/04/22</span>
+        </a>
+        
+        <a  class="All Unix-like "
+           href="/2019/04/22/docker-basic/"
+           data-tag="Docker,Linux"
+           data-author="" >
+            <span class="post-title" title="Docker Basic">Docker Basic</span>
+            <span class="post-date" title="2019-04-22 09:53:27">2019/04/22</span>
+        </a>
+        
+        <a  class="All Database "
+           href="/2019/04/22/mysql-basic/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="Mysql config &amp; basic syntax">Mysql config &amp; basic syntax</span>
+            <span class="post-date" title="2019-04-22 06:46:50">2019/04/22</span>
+        </a>
+        
+        <a  class="All BackEnd "
+           href="/2019/04/21/springboot-start-option/"
+           data-tag="Java,Tomcat,SpringBoot,Maven"
+           data-author="" >
+            <span class="post-title" title="Springboot Start Option">Springboot Start Option</span>
+            <span class="post-date" title="2019-04-21 05:55:47">2019/04/21</span>
+        </a>
+        
+        <a  class="All Unix Like "
+           href="/2019/04/20/mac-enviroment/"
+           data-tag="Mac,HomeBrew"
+           data-author="" >
+            <span class="post-title" title="Mac Enviroment">Mac Enviroment</span>
+            <span class="post-date" title="2019-04-20 02:01:50">2019/04/20</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="FullScreen hotkey: s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post" class="index">
+    <div class="pjax">
+        <article class="index">
+            <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+            
+        </article>
+        
+        
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©Copyright by Alan Chen
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+</div>
+<div class="full-toc">
+    <button class="full" data-title="FullScreen hotkey s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+</div>
 
 </body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
 
 </html>
