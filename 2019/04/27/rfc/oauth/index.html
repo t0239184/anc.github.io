@@ -6,15 +6,15 @@
   <meta name="keywords" content=" RFC文章 , Login ">
   <meta name="description" content="OAuth 2.0介紹 | ANCS">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Record my idea and technical note space.">
+<meta name="description" content="Hello">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ANCS">
-<meta property="og:url" content="http://t0239184.github.io/tags/index.html">
+<meta property="og:url" content="http://t0239184.github.io/about/index.html">
 <meta property="og:site_name" content="ANCS">
-<meta property="og:description" content="Record my idea and technical note space.">
+<meta property="og:description" content="Hello">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-06-27T06:08:33.186Z">
-<meta property="article:modified_time" content="2021-06-27T06:08:33.186Z">
+<meta property="article:published_time" content="2021-06-27T05:55:45.476Z">
+<meta property="article:modified_time" content="2021-06-27T05:55:45.476Z">
 <meta property="article:author" content="Alan Chen">
 <meta property="article:tag" content="Technical">
 <meta name="twitter:card" content="summary">
@@ -731,7 +731,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-06-28 10:02:01'>2019-04-27 23:22</time>
+            Created At : <time class="date" title='Updated At: 2021-06-28 14:55:54'>2019-04-27 23:22</time>
         
     </div>
     <div class="article-meta">
@@ -753,7 +753,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E8%B3%87%E6%BA%90%E8%AB%8B%E6%B1%82"><span class="toc-text">最基本的資源請求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A7%94%E8%A8%97%E7%AC%AC%E4%B8%89%E6%96%B9%E9%80%B2%E8%A1%8C%E8%B3%87%E6%BA%90%E7%9A%84%E8%AB%8B%E6%B1%82"><span class="toc-text">委託第三方進行資源的請求</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -769,16 +769,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最原始的取得Resource的方式就是向Server提供Account/Password, 然後Server進行<br><img src="https://t0239184.github.io/images/rfc/oauth1.png"><br><img src="https://t0239184.github.io/images/rfc/oauth2.png"></p>
+        <h2 id="最基本的資源請求"><a href="#最基本的資源請求" class="headerlink" title="最基本的資源請求"></a>最基本的資源請求</h2><p>最原始的取得Resource的方式就是向Server提供Account/Password, 然後Server進行驗證成功後才會將Resource返回給User<br><img src="https://t0239184.github.io/images/rfc/oauth1.png"></p>
+<h2 id="委託第三方進行資源的請求"><a href="#委託第三方進行資源的請求" class="headerlink" title="委託第三方進行資源的請求"></a>委託第三方進行資源的請求</h2><p><img src="https://t0239184.github.io/images/rfc/oauth2.png"></p>
 <ul>
+<li>Resource Owner的風險<ul>
+<li>Resource Server必須儲存Resource Owner 的帳號密碼</li>
 <li>第三方程式必須儲存 Resource Owner 的帳號密碼</li>
 <li>第三方程式會得到幾乎完整的權限，可以存取 Protected Resources</li>
 <li>Resource Owner 無法限制第三方程式的存取時效以及可存取範圍</li>
 <li>Resource Owner 無法撤回第三方程式的存取權，必須要改密碼才行</li>
-<li>任何第三方程式被破解 (compromized)，就會導致使用該密碼的所有資料被破解</li>
-<li>Server 必須支援密碼認證</li>
+<li>任何第三方程式被破解，就會導致使用該密碼的所有資料被破解</li>
+</ul>
+</li>
 </ul>
 <p><img src="https://t0239184.github.io/images/rfc/oauth3.png"></p>
+<p>…待補充</p>
 
       
        
