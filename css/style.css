@@ -1002,10 +1002,10 @@
 }
 .nav-right .title-list nav a .post-date,
 .nav-right .title-list #local-search-result a .post-date {
-  font-size: 15px;
+  font-size: 12px;
   margin: 8px 0;
   padding-right: 3px;
-  color: #9aa4af;
+  color: #c5c5c5;
   float: right;
 }
 .nav-right .friends-area {
