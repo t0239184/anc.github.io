@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Nodejs架設Server方法差異 | ANCS</title>
-  <meta name="keywords" content=" Node , Server ">
-  <meta name="description" content="Nodejs架設Server方法差異 | ANCS">
+  <title>簡易Vue.js筆記 | ANCS</title>
+  <meta name="keywords" content=" JavaScript , Vue.js ">
+  <meta name="description" content="簡易Vue.js筆記 | ANCS">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Record my idea and technical note space.">
 <meta property="og:type" content="website">
@@ -658,9 +658,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-nodejs/how-to-choose-node-server-lib" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-frontend/vue/vuejs" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Nodejs架設Server方法差異</h1>
+        <h1 class="article-title">簡易Vue.js筆記</h1>
     
     <div class="article-meta">
         
@@ -670,7 +670,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Node">Node</a>
+            <a  data-rel="FrontEnd">FrontEnd</a>
             
         </span>
         
@@ -678,16 +678,16 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">Node</a>
+            <a class="color1">JavaScript</a>
             
-            <a class="color2">Server</a>
+            <a class="color2">Vue.js</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-27 13:20:21'>2021-06-27 13:06</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-28 09:31:51'>2019-04-24 13:21</time>
         
     </div>
     <div class="article-meta">
@@ -709,7 +709,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Http"><span class="toc-text">Http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect"><span class="toc-text">Connect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express"><span class="toc-text">Express</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E8%AB%96"><span class="toc-text">結論</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-CDN"><span class="toc-text">Use CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Static-Value"><span class="toc-text">Static Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conditionals"><span class="toc-text">Conditionals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Loop"><span class="toc-text">Loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EvenListener"><span class="toc-text">EvenListener</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EvenListener-inline-statement"><span class="toc-text">EvenListener - inline statement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EvenListener-%E7%9B%B4%E6%8E%A5%E5%91%BC%E5%8F%AB%E6%96%B9%E6%B3%95"><span class="toc-text">EvenListener - 直接呼叫方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#add-event"><span class="toc-text">add event</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Components"><span class="toc-text">Components</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Component-by-Template"><span class="toc-text">Component by Template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E9%81%8E-Vue-loader-%E7%B7%A8%E8%AD%AF"><span class="toc-text">透過 Vue-loader 編譯</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -725,51 +725,225 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>關於Nodejs架設Server的選擇, 可以Node自帶的Http, 或Connect和Express, 這些都可以架設Server, 但差在哪裡呢? 要如何選擇呢?</p>
-<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><p>Node.js原先就有自帶Http這個Module, 可以幫助你架設Server, 但其他的東西都要自己處理</p>
-<pre class="language-js" data-language="js"><code class="language-js">import http from &#39;http&#39;
+        <p>Vue.js 是一個專注於View的Framework</p>
+<h2 id="Use-CDN"><a href="#Use-CDN" class="headerlink" title="Use CDN"></a>Use CDN</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue&quot;&gt;&lt;&#x2F;script&gt;</code></pre>
 
-const http &#x3D; http
-http.createServer(function(req, res) &#123;
-	console.log(req)
-	res.writeHead(200)
-	res.end(&#39;Hello world.&#39;)
-&#125;).listen(5000)</code></pre>
+<h2 id="Static-Value"><a href="#Static-Value" class="headerlink" title="Static Value"></a>Static Value</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &#123;&#123;message&#125;&#125;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  data:&#123;
+    message:&#39;Hello Vue.js!!&#39;
+  &#125;
+&#125;)</code></pre>
+
+<span id="more"></span>
+
+<h2 id="Conditionals"><a href="#Conditionals" class="headerlink" title="Conditionals"></a>Conditionals</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;h1&gt;
+    &lt;span v-if&#x3D;&quot;isVisable&quot;&gt;hello1&lt;&#x2F;span&gt;
+    &lt;span v-if&#x3D;&quot;!isVisable&quot;&gt;hello2&lt;&#x2F;span&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  data:&#123;
+    title:&#39;ChapterX - Condition and Loop&#39;,
+    isVisable:true
+  &#125;
+&#125;)</code></pre>
+
+<h2 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;h1&gt;
+    &lt;ol&gt;
+      &lt;li v-for&#x3D;&quot;item in itemList&quot;&gt;
+        &#123;&#123;item.id&#125;&#125;-&#123;&#123;item.name&#125;&#125;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  data:&#123;
+    title:&#39;ChapterX - Loop&#39;,
+    itemList:[
+      &#123;id:&#39;A001&#39;,name:&#39;apple&#39;&#125;,
+      &#123;id:&#39;A002&#39;,name:&#39;pineapple&#39;&#125;,
+      &#123;id:&#39;A003&#39;,name:&#39;applepen&#39;&#125;
+    ]
+  &#125;
+&#125;)</code></pre>
 
 
+<h2 id="EvenListener"><a href="#EvenListener" class="headerlink" title="EvenListener"></a>EvenListener</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;h1&gt;
+    &lt;p&gt;String:&lt;span&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+    &lt;button v-on:click&#x3D;&quot;reverseString&quot;&gt;ReverseString&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  data:&#123;
+    title:&#39;ChapterX - Loop&#39;,
+    message:&#39;live&#39;
+  &#125;,
+  methods:&#123;
+    reverseString:function()&#123;
+      this.message &#x3D; this.message.split(&#39;&#39;).reverse().join(&#39;&#39;);
+    &#125;
+  &#125;
+&#125;)</code></pre>
 
-<h2 id="Connect"><a href="#Connect" class="headerlink" title="Connect"></a>Connect</h2><p>這是個Middleware的套件, 主要是來處理Request, 例如Cookie的處理…<br>但Server的架設還是交由Http進行</p>
-<pre class="language-js" data-language="js"><code class="language-js">import http from &#39;http&#39;
-import connect from &#39;connect&#39;
+<h2 id="EvenListener-inline-statement"><a href="#EvenListener-inline-statement" class="headerlink" title="EvenListener - inline statement"></a>EvenListener - inline statement</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+  &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;h1&gt;
+  &lt;button v-on:click&#x3D;&quot;counter++&quot;&gt;Counter++&lt;&#x2F;button&gt;
+  &lt;p&gt;The button above has been clicked &lt;span style&#x3D;&quot;color:#F00&quot;&gt;&#123;&#123;counter&#125;&#125;   &lt;&#x2F;span&gt; times.&lt;&#x2F;p&gt;
+  &lt;button v-on:click&#x3D;&quot;clearCounter&quot;&gt;Clear Counter&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  data:&#123;
+    title:&#39;ChapterX - Loop&#39;,
+    counter:0
+  &#125;,
+  methods:&#123;
+    clearCounter:function()&#123;
+      alert(this); &#x2F;&#x2F;[object OBJECT]
+      this.counter &#x3D; 0;
+    &#125;
+    showTargetName:function(event)&#123;
+      if(event)&#123;
+        alert(event.target.tagName); &#x2F;&#x2F;[BUTTON]
+      &#125;
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<h2 id="EvenListener-直接呼叫方法"><a href="#EvenListener-直接呼叫方法" class="headerlink" title="EvenListener - 直接呼叫方法"></a>EvenListener - 直接呼叫方法</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;button v-on:click&#x3D;&quot;say(&#39;hi&#39;)&quot;&gt;SayHi&lt;&#x2F;button&gt;
+    &lt;button @click&#x3D;&quot;say(&#39;Hello&#39;)&quot;&gt;SayHello&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  methods:&#123;
+    say:function(message)&#123;
+      alert(message)
+    &#125;
+  &#125;
+&#125;)</code></pre>
 
-const app &#x3D; connect()
-  .use(connect.cookieParser())
-  .use(function(req, res) &#123;
-    console.log(req.cookies);
-    res.end(&#39;Hello Connect.&#39;);
-  &#125;)
+<h3 id="add-event"><a href="#add-event" class="headerlink" title="add event"></a>add event</h3><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;button @click&#x3D;&quot;warn(&#39;Form cannot be submitted yet.&#39;, $event)&quot;&gt;Submit&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  methods:&#123;
+    warn:function(msg, event)&#123;
+      if(event)&#123;
+        event.preventDefault()
+        alter(msg)
+      &#125;
+    &#125;
+  &#125;
+&#125;)</code></pre>
 
 
-const http &#x3D; http
-http.createServer(app).listen(5000)</code></pre>
+<hr>
+<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &#123;&#123; message &#125;&#125;
+    &lt;menu-section&gt;&lt;&#x2F;menu-section&gt;
+    &lt;description-section&gt;&lt;&#x2F;description-section&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+    el: &#39;#app&#39;,
+    data: &#123;
+        message: &#39;Hello Vue!&#39;
+    &#125;,
+    components: &#123;
+        &#39;menu-section&#39;: &#123;
+            template: &#39;&lt;ul&gt;&lt;li v-for&#x3D;&quot;item in menuItems&quot;&gt;&#123;&#123; item.text &#125;&#125;&lt;&#x2F;li&gt;&lt;&#x2F;ul&gt;&#39;,
+            data: function() &#123;
+                return &#123;
+                    menuItems: [
+                    	&#123;text: &#39;About me&#39;&#125;,
+                    	&#123;text: &#39;Articles&#39;&#125;,
+                    	&#123;text: &#39;contact&#39;&#125;
+                    ]
+                &#125;
+            &#125;
+        &#125;,
+        &#39;description-section&#39;: &#123;
+            template: &#39;&lt;p&gt;&#123;&#123; text &#125;&#125;&lt;&#x2F;p&gt;&#39;,
+            data: function() &#123;
+                return &#123;
+                    text: &#39;Hello, I am Ralph.&#39;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;);</code></pre>
 
+<h2 id="Component-by-Template"><a href="#Component-by-Template" class="headerlink" title="Component by Template"></a>Component by Template</h2><pre class="language-html" data-language="html"><code class="language-html">&lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;h1&gt;&#123;&#123;Title&#125;&#125;&lt;&#x2F;h1&gt;
+    &lt;h3&gt;&#123;&#123;subTitle&#125;&#125;&lt;&#x2F;h3&gt;
+    &lt;menu-section&#x2F;&gt;
 
+    &lt;!-- 新增Component Template --&gt;
+    &lt;template id&#x3D;&quot;menuTemplate&quot;&gt;
+      &lt;h3&gt;
+        &lt;ul&gt;
+          &lt;li v-for&#x3D;&quot;item in itemList&quot;&gt;&#123;&#123;item.text&#125;&#125;&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;h3&gt;
+    &lt;&#x2F;template&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">var app &#x3D; new Vue(&#123;
+  el:&#39;#app&#39;,
+  data:&#123;
+    Title:&#39;Chapter3&#39;,
+    subTitle:&#39;Component by template&#39;
+  &#125;,
+  components:&#123;
+    &#39;menu-section&#39;:&#123;
+      template:&#39;#menuTemplate&#39;,
+      data:function()&#123;
+        return &#123;itemList:[&#123;text:&#39;1&#39;&#125;,&#123;text:&#39;2&#39;&#125;,&#123;text:&#39;3&#39;&#125;]&#125;
+      &#125;
+    &#125;
+  &#125;,
+&#125;)</code></pre>
+<hr>
+<h2 id="透過-Vue-loader-編譯"><a href="#透過-Vue-loader-編譯" class="headerlink" title="透過 Vue-loader 編譯"></a>透過 Vue-loader 編譯</h2><p>所有的HTML跟Template混在一起，非常亂，可以拆分為.vue的檔案出來<br/><br>將HTML中分離出.vue (Vue file)</p>
+<pre class="language-html" data-language="html"><code class="language-html">&#x2F;* Menu.vue *&#x2F;
+&lt;template&gt;
+	&lt;ul&gt;
+		&lt;li v-for&#x3D;&quot;item in menuItems&quot;&gt;&#123;&#123; item.text &#125;&#125;&lt;&#x2F;li&gt;
+	&lt;&#x2F;ul&gt;
+&lt;&#x2F;template&gt;
 
-<h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><p>可以說是Connect的加強版, 裡頭包含了Route等等的功能, 然後已經不用Import Http了, 用Express就可以直接進行Server的架設了</p>
-<pre class="language-js" data-language="js"><code class="language-js">import express from &#39;express&#39;
+&lt;script&gt;
+export default &#123;
+	data: function() &#123;
+		return &#123;
+			menuItems: [&#123;
+            text: &#39;About me&#39;
+          &#125;, &#123;
+            text: &#39;Articles&#39;
+          &#125;, &#123;
+            text: &#39;contact&#39;
+          &#125;]
+       &#125;
+   &#125;
+&#125;
+&lt;&#x2F;script&gt;
 
-const app &#x3D; express()
+&lt;style&gt;
+&#x2F;* 樣式也可以包進來 ._. *&#x2F;
+.original-white &#123;
+	color: #fff;
+&#125;
+&lt;&#x2F;style&gt;</code></pre>
 
-app.use(express.cookieParser())
-app.use(express.json())
-app.get(&#39;&#x2F;&#39;, function(req, res) &#123;
-  console.log(req.cookies)
-  res.send(&#39;Hello Express.&#39;)
-&#125;)
-
-app.listen(&#39;5000&#39;)</code></pre>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>目前大多數看到的都是使用Express, 老實說真的比較方便</p>
+<blockquote>
+<p>參考來源<br><a target="_blank" rel="noopener" href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10186730">https://ithelp.ithome.com.tw/articles/10186730</a></p>
+</blockquote>
 
       
        
