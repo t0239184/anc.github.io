@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSL測試 - 憑證申請 | ANCS</title>
+  <meta name="keywords" content=" SSL ">
+  <meta name="description" content="SSL測試 - 憑證申請 | ANCS">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Hello">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ANCS">
+<meta property="og:url" content="http://t0239184.github.io/about/index.html">
+<meta property="og:site_name" content="ANCS">
+<meta property="og:description" content="Hello">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-06-27T05:55:45.476Z">
+<meta property="article:modified_time" content="2021-06-27T05:55:45.476Z">
+<meta property="article:author" content="Alan Chen">
+<meta property="article:tag" content="Technical">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Alan Chen</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/t0239184"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(29)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="理論文章">
+                        
+                        理論文章
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="系統架構">
+                        
+                        系統架構
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Chess">
+                        
+                        Chess
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Database">
+                        
+                        Database
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Docker">
+                        
+                        Docker
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="English Learning">
+                        
+                        English Learning
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="FrontEnd">
+                        
+                        FrontEnd
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Hexo">
+                        
+                        Hexo
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Homebrew">
+                        
+                        Homebrew
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux指令">
+                        
+                        Linux指令
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="MacOS">
+                        
+                        MacOS
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Node">
+                        
+                        Node
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Regex">
+                        
+                        Regex
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="RFC文章">
+                        
+                        RFC文章
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Server容器">
+                        
+                        Server容器
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Spring">
+                        
+                        Spring
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Sublime">
+                        
+                        Sublime
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Vue">
+                        
+                        Vue
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="29">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="Searchshortcut:i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="Structureshortcut:w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="Case Sensitive"></i>
+            <i class="iconfont icon-tag" data-title="Tag"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">Structure</div>
+            <i class="iconfont icon-list" data-title="Switch to post list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Access-Control-Allow-Origin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AJAX</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Arch-Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Browser</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Chess</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Elementary-School L1</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Elementy-School L1</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Header</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Homebrew</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Https</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JavaScript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Load-Balance</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Login</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MacOS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nohup</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Proxy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Regex</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Response</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RFC文章</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Same Origin Policy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Server</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Service</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SpringBoot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SSL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sublime</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Tomcat</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Vue</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="All 系統架構 "
+           href="/sa/ssl-test/"
+           data-tag="SSL"
+           data-author="" >
+            <span class="post-title" title="SSL測試 - 憑證申請">SSL測試 - 憑證申請</span>
+            <span class="post-date" title="2021-07-14 16:48:50">2021/07/14</span>
+        </a>
+        
+        <a  class="All 系統架構 "
+           href="/sa/ssl/"
+           data-tag="SSL"
+           data-author="" >
+            <span class="post-title" title="SSL介紹">SSL介紹</span>
+            <span class="post-date" title="2021-07-14 16:48:50">2021/07/14</span>
+        </a>
+        
+        <a  class="All English Learning "
+           href="/lang-learn/circus-clowns/"
+           data-tag="Elementary-School L1"
+           data-author="" >
+            <span class="post-title" title="Circus Clowns">Circus Clowns</span>
+            <span class="post-date" title="2021-07-03 00:00:00">2021/07/03</span>
+        </a>
+        
+        <a  class="All English Learning "
+           href="/lang-learn/trucks/"
+           data-tag="Elementy-School L1"
+           data-author="" >
+            <span class="post-title" title="Trucks">Trucks</span>
+            <span class="post-date" title="2021-07-02 00:00:00">2021/07/02</span>
+        </a>
+        
+        <a  class="All Node "
+           href="/nodejs/nodejs-use-ssl-certificate/"
+           data-tag="Node,Server,SSL,Https"
+           data-author="" >
+            <span class="post-title" title="Nodejs架設Server方法差異">Nodejs架設Server方法差異</span>
+            <span class="post-date" title="2021-06-30 08:27:00">2021/06/30</span>
+        </a>
+        
+        <a  class="All Linux指令 "
+           href="/linux/command/zip-and-unzip/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="如何在Linux進行各種壓縮和解壓縮">如何在Linux進行各種壓縮和解壓縮</span>
+            <span class="post-date" title="2021-06-28 17:24:01">2021/06/28</span>
+        </a>
+        
+        <a  class="All RFC文章 "
+           href="/rfc/bearer-token/"
+           data-tag="RFC文章,Login"
+           data-author="" >
+            <span class="post-title" title="RFC-6750 Bearer Token介紹">RFC-6750 Bearer Token介紹</span>
+            <span class="post-date" title="2021-06-28 16:00:00">2021/06/28</span>
+        </a>
+        
+        <a  class="All RFC文章 "
+           href="/rfc/oauth/"
+           data-tag="RFC文章,Login"
+           data-author="" >
+            <span class="post-title" title="RFC-6749 OAuth 2.0介紹">RFC-6749 OAuth 2.0介紹</span>
+            <span class="post-date" title="2021-06-28 14:57:53">2021/06/28</span>
+        </a>
+        
+        <a  class="All Node "
+           href="/nodejs/how-to-choose-node-server-lib/"
+           data-tag="Node,Server"
+           data-author="" >
+            <span class="post-title" title="Nodejs架設Server方法差異">Nodejs架設Server方法差異</span>
+            <span class="post-date" title="2021-06-27 13:06:00">2021/06/27</span>
+        </a>
+        
+        <a  class="All Regex "
+           href="/regex/common-regex-pattern/"
+           data-tag="Regex"
+           data-author="" >
+            <span class="post-title" title="常用Regex Pattern">常用Regex Pattern</span>
+            <span class="post-date" title="2021-06-26 20:48:48">2021/06/26</span>
+        </a>
+        
+        <a  class="All Hexo "
+           href="/hexo/hexo-init/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo使用教學">Hexo使用教學</span>
+            <span class="post-date" title="2021-06-26 20:19:10">2021/06/26</span>
+        </a>
+        
+        <a  class="All Chess "
+           href="/chess/chess-note/"
+           data-tag="Chess"
+           data-author="" >
+            <span class="post-title" title="西洋棋棋譜紀錄">西洋棋棋譜紀錄</span>
+            <span class="post-date" title="2019-07-24 00:00:00">2019/07/24</span>
+        </a>
+        
+        <a  class="All Chess "
+           href="/chess/basic-chess/"
+           data-tag="Chess"
+           data-author="" >
+            <span class="post-title" title="基本西洋棋知識">基本西洋棋知識</span>
+            <span class="post-date" title="2019-07-24 00:00:00">2019/07/24</span>
+        </a>
+        
+        <a  class="All Sublime "
+           href="/compiler-run-java-in-sublime/"
+           data-tag="Java,Sublime"
+           data-author="" >
+            <span class="post-title" title="Compiler &amp; Run Java in Sublime">Compiler &amp; Run Java in Sublime</span>
+            <span class="post-date" title="2019-04-27 23:22:53">2019/04/27</span>
+        </a>
+        
+        <a  class="All Linux指令 "
+           href="/linux/command/nohup/"
+           data-tag="nohup,Linux"
+           data-author="" >
+            <span class="post-title" title="nohup">nohup</span>
+            <span class="post-date" title="2019-04-25 16:46:01">2019/04/25</span>
+        </a>
+        
+        <a  class="All Server容器 "
+           href="/java/tomcat-enviroment/"
+           data-tag="Tomcat"
+           data-author="" >
+            <span class="post-title" title="Tomcat環境架設">Tomcat環境架設</span>
+            <span class="post-date" title="2019-04-25 02:11:46">2019/04/25</span>
+        </a>
+        
+        <a  class="All Vue "
+           href="/frontend/vue/vuejs/"
+           data-tag="JavaScript,Vue"
+           data-author="" >
+            <span class="post-title" title="簡易Vue.js筆記">簡易Vue.js筆記</span>
+            <span class="post-date" title="2019-04-24 13:21:51">2019/04/24</span>
+        </a>
+        
+        <a  class="All RFC文章 "
+           href="/rfc/same-origin-policy/"
+           data-tag="Browser,Response,Header,Same Origin Policy,Access-Control-Allow-Origin"
+           data-author="" >
+            <span class="post-title" title="RFC-6454 Same Origin Policy介紹">RFC-6454 Same Origin Policy介紹</span>
+            <span class="post-date" title="2019-04-24 13:13:05">2019/04/24</span>
+        </a>
+        
+        <a  class="All 理論文章 "
+           href="/frontend/ajax/"
+           data-tag="JavaScript,AJAX"
+           data-author="" >
+            <span class="post-title" title="什麼是AJAX?">什麼是AJAX?</span>
+            <span class="post-date" title="2019-04-24 13:00:45">2019/04/24</span>
+        </a>
+        
+        <a  class="All FrontEnd "
+           href="/frontend/javascript-ajax-function/"
+           data-tag="JavaScript,AJAX"
+           data-author="" >
+            <span class="post-title" title="使用原生JavaScript進行AJAX">使用原生JavaScript進行AJAX</span>
+            <span class="post-date" title="2019-04-24 12:42:44">2019/04/24</span>
+        </a>
+        
+        <a  class="All 系統架構 "
+           href="/sa/nginx/"
+           data-tag="Load-Balance,Proxy,Nginx"
+           data-author="" >
+            <span class="post-title" title="什麼是Nginx?">什麼是Nginx?</span>
+            <span class="post-date" title="2019-04-23 16:48:50">2019/04/23</span>
+        </a>
+        
+        <a  class="All Linux "
+           href="/linux/arch-linux-note/"
+           data-tag="Arch-Linux"
+           data-author="" >
+            <span class="post-title" title="Arch Linux 安裝筆記">Arch Linux 安裝筆記</span>
+            <span class="post-date" title="2019-04-23 15:11:37">2019/04/23</span>
+        </a>
+        
+        <a  class="All Homebrew "
+           href="/mac/brew-service/"
+           data-tag="Mac,Homebrew,Service"
+           data-author="" >
+            <span class="post-title" title="Brew Service">Brew Service</span>
+            <span class="post-date" title="2019-04-22 12:08:58">2019/04/22</span>
+        </a>
+        
+        <a  class="All Docker "
+           href="/docker/docker-file/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Dockerfile">Dockerfile</span>
+            <span class="post-date" title="2019-04-22 11:29:28">2019/04/22</span>
+        </a>
+        
+        <a  class="All Docker "
+           href="/docker/docker-volume/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Docker Volume">Docker Volume</span>
+            <span class="post-date" title="2019-04-22 11:16:26">2019/04/22</span>
+        </a>
+        
+        <a  class="All Docker "
+           href="/docker/docker-basic/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Docker Basic">Docker Basic</span>
+            <span class="post-date" title="2019-04-22 09:53:27">2019/04/22</span>
+        </a>
+        
+        <a  class="All Database "
+           href="/database/mysql-basic/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="Mysql config &amp; basic syntax">Mysql config &amp; basic syntax</span>
+            <span class="post-date" title="2019-04-22 06:46:50">2019/04/22</span>
+        </a>
+        
+        <a  class="All Spring "
+           href="/java/spring/springboot-start-option/"
+           data-tag="Java,Tomcat,SpringBoot,Maven"
+           data-author="" >
+            <span class="post-title" title="Springboot Start Option">Springboot Start Option</span>
+            <span class="post-date" title="2019-04-21 05:55:47">2019/04/21</span>
+        </a>
+        
+        <a  class="All MacOS "
+           href="/mac/mac-enviroment/"
+           data-tag="MacOS"
+           data-author="" >
+            <span class="post-title" title="Mac環境架設(持續更新)">Mac環境架設(持續更新)</span>
+            <span class="post-date" title="2019-04-20 02:01:50">2019/04/20</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-sa/ssl-test" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">SSL測試 - 憑證申請</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="系統架構">系統架構</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">SSL</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2021-07-14 14:48:07'>2021-07-14 16:48</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROOT-CA"><span class="toc-text">ROOT-CA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A2%E7%94%9FROOT-CA-Certificate"><span class="toc-text">產生ROOT CA Certificate</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SUB-CA"><span class="toc-text">SUB-CA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A2%E7%94%9FSub-CA-Certificate"><span class="toc-text">產生Sub CA Certificate</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ServerA"><span class="toc-text">ServerA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ServerB"><span class="toc-text">ServerB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E8%AA%9E"><span class="toc-text">結語</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在進行SSL測試之前要先把相關憑證都弄好, 但因為是自己測試<br>所以就要自己身兼多職, 當ROOT_CA, SUB_CA, SERVER_A, SERVER_B<br>全部都自己來, 哈</p>
+<h2 id="ROOT-CA"><a href="#ROOT-CA" class="headerlink" title="ROOT-CA"></a>ROOT-CA</h2><h3 id="產生ROOT-CA-Certificate"><a href="#產生ROOT-CA-Certificate" class="headerlink" title="產生ROOT CA Certificate"></a>產生ROOT CA Certificate</h3><p>Generate Key Pair</p>
+<pre class="language-none"><code class="language-none">openssl genrsa -aes256 -out root&#x2F;root.ca.pri.key 4096</code></pre>
+
+<p>password: 1234</p>
+<p>Generate Root CA Certificate</p>
+<pre class="language-none"><code class="language-none">openssl req -new -x509 -days 365 -sha256 \
+        -subj &quot;&#x2F;C&#x3D;TW&#x2F;ST&#x3D;Taipei&#x2F;O&#x3D;SuperRootCA&#x2F;OU&#x3D;IT&#x2F;CN&#x3D;www.superRootCA.com&quot; \
+        -key root.ca.pri.key \
+        -out root_ca&#x2F;root_ca.crt</code></pre>
+
+
+
+
+
+<h2 id="SUB-CA"><a href="#SUB-CA" class="headerlink" title="SUB-CA"></a>SUB-CA</h2><h3 id="產生Sub-CA-Certificate"><a href="#產生Sub-CA-Certificate" class="headerlink" title="產生Sub CA Certificate"></a>產生Sub CA Certificate</h3><p>Generate Key Pair</p>
+<pre class="language-none"><code class="language-none">openssl genrsa -aes256 -out sub.ca.pri.key 4096</code></pre>
+
+<p>password: 1234</p>
+<p>Generate CSR</p>
+<pre class="language-none"><code class="language-none">openssl req -new -sha256 -key sub.ca.pri.key \
+        -subj &quot;&#x2F;C&#x3D;TW&#x2F;ST&#x3D;Taipei&#x2F;O&#x3D;ImSubCA&#x2F;OU&#x3D;IT&#x2F;CN&#x3D;www.subca.com&quot; \
+        -out sub_ca.csr</code></pre>
+
+<p>Send CSR to Root-CA</p>
+<p>Received Sub-CA Certificate</p>
+<pre class="language-none"><code class="language-none">openssl x509 -req -CAcreateserial -days 30 -sha256 \
+        -CA root_ca.crt \
+        -CAkey root.ca.pri.key \
+        -in sub_ca.csr \
+        -out sub_ca.crt</code></pre>
+
+
+
+
+
+<h2 id="ServerA"><a href="#ServerA" class="headerlink" title="ServerA"></a>ServerA</h2><blockquote>
+<p>host: localhost:5001</p>
+</blockquote>
+<p>Generate Key Pari</p>
+<pre class="language-none"><code class="language-none">openssl genrsa -out server.a.pri.key 4096</code></pre>
+
+
+
+<p>Generate CSR</p>
+<pre class="language-none"><code class="language-none">openssl req -new -sha256 -key server.a.pri.key \
+        -subj &quot;&#x2F;C&#x3D;TW&#x2F;ST&#x3D;Taipei&#x2F;O&#x3D;ImServerA&#x2F;OU&#x3D;IT&#x2F;CN&#x3D;www.serverA.com&quot; \
+        -out server_a.csr</code></pre>
+
+
+
+<p>Send CSR to Sub-CA</p>
+<p>Received Server SSL Certificate</p>
+<pre class="language-none"><code class="language-none">openssl x509 -req -CAcreateserial -days 30 -sha256 \
+        -CA sub_ca.crt \
+        -CAkey sub.ca.pri.key \
+        -in server_a.csr \
+        -out server_a.crt</code></pre>
+
+
+
+
+
+<h2 id="ServerB"><a href="#ServerB" class="headerlink" title="ServerB"></a>ServerB</h2><blockquote>
+<p>host: localhost:5002</p>
+</blockquote>
+<p>Generate Key Pari</p>
+<pre class="language-none"><code class="language-none">openssl genrsa -out server.b.pri.key 4096</code></pre>
+
+
+
+<p>Generate CSR</p>
+<pre class="language-none"><code class="language-none">openssl req -new -sha256 -key server.b.pri.key \
+        -subj &quot;&#x2F;C&#x3D;TW&#x2F;ST&#x3D;Taipei&#x2F;O&#x3D;ImServerB&#x2F;OU&#x3D;IT&#x2F;CN&#x3D;www.serverB.com&quot; \
+        -out server_b.csr</code></pre>
+
+
+
+<p>Send CSR to Sub-CA</p>
+<p>Received Server SSL Certificate</p>
+<pre class="language-none"><code class="language-none">openssl x509 -req -CAcreateserial -days 30 -sha256 \
+        -CA sub_ca.crt \
+        -CAkey sub.ca.pri.key \
+        -in server_b.csr \
+        -out server_b.crt</code></pre>
+
+
+
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>目前這樣就算把相關憑證都產生完了, 之後就是進行憑證的掛載還有API的測試了</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©Copyright by Alan Chen
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="FullScreen hotkey s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
